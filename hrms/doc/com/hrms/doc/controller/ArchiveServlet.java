@@ -144,6 +144,7 @@ public class ArchiveServlet extends HttpServlet {
 			String a_sum = request.getParameter("a_sum");
 			String a_note = request.getParameter("a_note");
 			
+			
 			Archive archive = new Archive(a_id, e_id, a_num, a_name, a_sum, a_note);
 			int flag =manager.updateArchive(archive);
 			if(flag ==0){
