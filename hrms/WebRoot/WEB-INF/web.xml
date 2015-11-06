@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<!-- 配置编码过滤器 -->
+	<filter>
+		<!-- 过滤器名称 -->
+		<filter-name>encoding</filter-name>
+		<!-- 过滤器类 -->
+		<filter-class>com.hrms.commons.filter.EncodingFilter</filter-class>
+		<!-- 配置初始化参数 -->
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<!-- 过滤器映射配置 -->
+	<filter-mapping>
+		<filter-name>encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- servlet配置：包含一个servlet以及多个servletmapping的配置 -->
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.hrms.sys.controller.LoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>AddEmp</servlet-name>
+		<servlet-class>com.hrms.sys.controller.AddEmp</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>DeleteEmp</servlet-name>
+		<servlet-class>com.hrms.sys.controller.DeleteEmp</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ListEmp</servlet-name>
+		<servlet-class>com.hrms.sys.controller.ListEmp</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UpdateEmp</servlet-name>
+		<servlet-class>com.hrms.sys.controller.UpdateEmp</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>AddDept</servlet-name>
+		<servlet-class>com.hrms.sys.controller.AddDept</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>DeleteDept</servlet-name>
+		<servlet-class>com.hrms.sys.controller.DeleteDept</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ListDept</servlet-name>
+		<servlet-class>com.hrms.sys.controller.ListDept</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UpdateDept</servlet-name>
+		<servlet-class>com.hrms.sys.controller.UpdateDept</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>RoleServlet</servlet-name>
+		<servlet-class>com.hrms.sys.controller.RoleServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ModuleServlet</servlet-name>
+		<servlet-class>com.hrms.sys.controller.ModuleServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>DisEmpRoleServlet</servlet-name>
+		<servlet-class>com.hrms.sys.controller.DisEmpRoleServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>DisModuleRoleServlet</servlet-name>
+		<servlet-class>com.hrms.sys.controller.DisModuleRoleServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>Test</servlet-name>
+		<servlet-class>com.hrms.sys.controller.Test</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ListEmployeeServlet</servlet-name>
+		<servlet-class>com.hrms.sys.controller.ListEmployeeServlet</servlet-class>
+	</servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>com.hrms.doc.updown.UploadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>t</servlet-name>
+    <servlet-class>com.hrms.doc.updown.t</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DownloadServlet</servlet-name>
+    <servlet-class>com.hrms.doc.updown.DownloadServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DocBaseInfoServlet</servlet-name>
+    <servlet-class>com.hrms.doc.controller.DocBaseInfoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>BaseInfoSearch</servlet-name>
+    <servlet-class>com.hrms.doc.controller.BaseInfoSearch</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ArchiveServlet</servlet-name>
+    <servlet-class>com.hrms.doc.controller.ArchiveServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>ListEmployeeServlet</servlet-name>
+		<url-pattern>/listEmployeeServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddEmp</servlet-name>
+		<url-pattern>/addEmp</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteEmp</servlet-name>
+		<url-pattern>/deleteEmp</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ListEmp</servlet-name>
+		<url-pattern>/listEmp</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateEmp</servlet-name>
+		<url-pattern>/updateEmp</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddDept</servlet-name>
+		<url-pattern>/addDept</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteDept</servlet-name>
+		<url-pattern>/deleteDept</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ListDept</servlet-name>
+		<url-pattern>/listDept</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateDept</servlet-name>
+		<url-pattern>/updateDept</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RoleServlet</servlet-name>
+		<url-pattern>/roleServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ModuleServlet</servlet-name>
+		<url-pattern>/moduleServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DisEmpRoleServlet</servlet-name>
+		<url-pattern>/disEmpRoleServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DisModuleRoleServlet</servlet-name>
+		<url-pattern>/disModuleRoleServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Test</servlet-name>
+		<url-pattern>/test</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/uploadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>t</servlet-name>
+    <url-pattern>/servlet/t</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DownloadServlet</servlet-name>
+    <url-pattern>/downloadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DocBaseInfoServlet</servlet-name>
+    <url-pattern>/docBaseInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BaseInfoSearch</servlet-name>
+    <url-pattern>/baseInfoSearch</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ArchiveServlet</servlet-name>
+    <url-pattern>/archiveServlet</url-pattern>
+  </servlet-mapping>
+
+
+	<!-- 欢迎页面 -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+</web-app>
