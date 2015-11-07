@@ -19,6 +19,8 @@
 		<filter-name>encoding</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	
 
 	<!-- servlet配置：包含一个servlet以及多个servletmapping的配置 -->
 	<servlet>
@@ -98,12 +100,6 @@
 		<servlet-class>com.hrms.sys.controller.DisModuleRoleServlet</servlet-class>
 	</servlet>
 	<servlet>
-		<description>This is the description of my J2EE component</description>
-		<display-name>This is the display name of my J2EE component</display-name>
-		<servlet-name>Test</servlet-name>
-		<servlet-class>com.hrms.sys.controller.Test</servlet-class>
-	</servlet>
-	<servlet>
 		<servlet-name>ListEmployeeServlet</servlet-name>
 		<servlet-class>com.hrms.sys.controller.ListEmployeeServlet</servlet-class>
 	</servlet>
@@ -112,12 +108,6 @@
     <display-name>This is the display name of my J2EE component</display-name>
     <servlet-name>UploadServlet</servlet-name>
     <servlet-class>com.hrms.doc.updown.UploadServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>t</servlet-name>
-    <servlet-class>com.hrms.doc.updown.t</servlet-class>
   </servlet>
   <servlet>
     <description>This is the description of my J2EE component</description>
@@ -143,6 +133,34 @@
     <servlet-name>ArchiveServlet</servlet-name>
     <servlet-class>com.hrms.doc.controller.ArchiveServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RecordActionServlet</servlet-name>
+    <servlet-class>com.hrms.doc.controller.RecordActionServlet</servlet-class>
+    
+     <init-param>
+    	<!-- action配置 -->
+        <param-name>record</param-name>
+        <param-value>com.hrms.doc.action.RecordAction</param-value>
+    </init-param>
+    <init-param>
+    	 <!-- jsp路径映射 -->
+        <param-name>recordAdd</param-name>
+        <param-value>/WEB-INF/doc/recordAdd.jsp</param-value>
+    </init-param>
+    <init-param>
+    	 <!-- jsp路径映射 -->
+        <param-name>recordEdit</param-name>
+        <param-value>/WEB-INF/doc/recordEdit.jsp</param-value>
+    </init-param>
+     <init-param>
+    	 <!-- jsp路径映射 -->
+        <param-name>recordView</param-name>
+        <param-value>/WEB-INF/doc/recordView.jsp</param-value>
+    </init-param>
+  </servlet>
+
 
 
 
@@ -206,17 +224,9 @@
 		<servlet-name>DisModuleRoleServlet</servlet-name>
 		<url-pattern>/disModuleRoleServlet</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>Test</servlet-name>
-		<url-pattern>/test</url-pattern>
-	</servlet-mapping>
   <servlet-mapping>
     <servlet-name>UploadServlet</servlet-name>
     <url-pattern>/uploadServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>t</servlet-name>
-    <url-pattern>/servlet/t</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>DownloadServlet</servlet-name>
@@ -234,6 +244,10 @@
     <servlet-name>ArchiveServlet</servlet-name>
     <url-pattern>/archiveServlet</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RecordActionServlet</servlet-name>
+    <url-pattern>/RecordActionServlet</url-pattern>
+  </servlet-mapping>
 
 
 	<!-- 欢迎页面 -->
@@ -243,4 +257,5 @@
 	<login-config>
 		<auth-method>BASIC</auth-method>
 	</login-config>
+   
 </web-app>

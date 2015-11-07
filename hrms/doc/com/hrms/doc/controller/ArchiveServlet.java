@@ -84,7 +84,7 @@ public class ArchiveServlet extends HttpServlet {
 		}else if(item.equals("view") || item.equals("edit")){
 			
 			int pagenum = 1;
-			int pagesize = 1;
+			int pagesize = 15;
 			
 			if(request.getParameter("pagenum")!=null) {
 				pagenum = Integer.parseInt(request.getParameter("pagenum"));
@@ -135,7 +135,12 @@ public class ArchiveServlet extends HttpServlet {
 			
 			request.getRequestDispatcher("/WEB-INF/doc/updateArchive.jsp").forward(request, response);
 		}else if(item.equals("delete")){
-			
+			String a_id = request.getParameter("a_id");
+			int flag = manager.deleteArchiveById(a_id);
+			if(flag > 0){
+				request.setAttribute("success", "success");
+				request.getRequestDispatcher("/WEB-INF/doc/success.jsp").forward(request, response);
+			}
 		}else if(item.equals("update")){
 			String a_id = request.getParameter("a_id");
 			String e_id = request.getParameter("e_id");

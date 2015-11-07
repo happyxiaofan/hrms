@@ -81,6 +81,7 @@ body {
 		function editAreaValue(){
 			return document.getElementById("editValue").value;
 		}
+		
 		window.onload = function(){
 			var editValue = document.getElementById("editValue").value;
 			if(editValue=="view"){
@@ -111,53 +112,42 @@ body {
 								</div></td>
 							<!-- 员工编号 -->
 							<td width="12%" height="20" bgcolor="d3eaef" class="STYLE6"><div
-									align="center">姓名</div></td>
+									align="center">部门</div></td>
 							<td width="8%" height="20" bgcolor="d3eaef" class="STYLE6"><div
-									align="center">性别</div></td>
+									align="center">职位</div></td>
 							<td width="8%" height="20" bgcolor="d3eaef" class="STYLE6"><div
 									align="center">学历</div></td>
 							<td width="50px" height="20" bgcolor="d3eaef" class="STYLE6"><div
-									align="center">学位</div></td>
+									align="center">工作内容</div></td>
 							<td width="16%" height="20" bgcolor="d3eaef" class="STYLE6"><div
-									align="center">所在部门</div></td>
+									align="center">开始时间</div></td>
 							<td width="5%" height="20" bgcolor="d3eaef" class="STYLE6">
-								<div align="center">职位</div>
+								<div align="center">结束时间</div>
 							</td>
-							<td width="20%" height="20" bgcolor="d3eaef" class="STYLE6">
-								<div align="center">照片</div>
-							</td>
-							<td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div
-									align="center">
-									<span class="STYLE10">状态</span>
-								</div></td>
 							<td width="50px" height="20" bgcolor="d3eaef" class="STYLE6" ><div
 									align="center" class="editArea">
 									<span class="STYLE10">基本操作</span>
 								</div></td>
 							
 						</tr>
-						<c:forEach items="${infos}" var="info">
+						<c:forEach items="${records}" var="record">
 			   				<tr>
 			   					<td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
 									align="center">
 									<input type="checkbox" name="checkbox" id="checkbox" />
 								</div></td>
 			   					<td height="20" width="50px" bgcolor="#FFFFFF" class="STYLE19"><div
-									align="center">${info.e_name }</div></td>
+									align="center">${record.dept }</div></td>
 			   					<td height="20" width="50px" bgcolor="#FFFFFF" class="STYLE19"><div
-									align="center">${info.gender }</div></td>
+									align="center">${record.job }</div></td>
 			   					<td height="20" width="50px" bgcolor="#FFFFFF" class="STYLE19"><div
-									align="center">${info.education }</div></td>
+									align="center">${record.edu }</div></td>
 								<td height="20" width="100px" bgcolor="#FFFFFF" class="STYLE19"><div
-									align="center">${info.degree }</div></td>
+									align="center">${record.work }</div></td>
 								<td height="20" width="50px" bgcolor="#FFFFFF" class="STYLE19"><div
-									align="center">财务部</div></td>
+									align="center">${record.start_time }</div></td>
 								<td height="20" width="50px"bgcolor="#FFFFFF" class="STYLE19"><div
-									align="center">开发工程师</div></td>
-									<td height="20" width="50px"bgcolor="#FFFFFF" class="STYLE19"><div
-									align="center"><a href="docBaseInfoServlet?item=viewpic">照片</a></div></td>
-								<td height="20" width="50px"bgcolor="#FFFFFF" class="STYLE19"><div
-									align="center">${info.status }</div></td>
+									align="center">${record.end_time }</div></td>
 								
 								<td height="20" bgcolor="#FFFFFF" width="60px"><div align="center" id="editArea">
 									<span class="STYLE19"><a

@@ -32,6 +32,24 @@ public class ArchiveManager {
 		}
 	}
 	
+	public void update(String sql, List<Object> param) {
+		try {
+			stmt = conn.prepareStatement(sql);
+			if (param != null && param.size() > 0) {
+				for (int i = 0; i < param.size(); i++) {
+					stmt.setObject(i + 1, param.get(i));
+				}
+			}
+			stmt.executeUpdate();
+			conn.commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			DBUtils.release(null, stmt, null);
+		}
+	}
+	
 	public int submitArchive(Archive archive) {
 		int flag= 0;
 		try {

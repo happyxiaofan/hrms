@@ -94,18 +94,11 @@ body {
 		<li><a href="${pageContext.request.contextPath }/archiveServlet?item=view" target="rightFrame">档案查看</a></li>
       </ul>
     </li>
-    <li> <a class="head">员工证书</a>
+    <li> <a class="head">员工履历</a>
       <ul>
-        <li><a href="edu/addTrain.jsp" target="rightFrame">档案录入</a></li>
-		<li><a href="edu/alterTrain.jsp" target="rightFrame">证书信息编辑</a></li>
-		<li><a href="edu/alterTrain.jsp" target="rightFrame">证书信息查看</a></li>
-      </ul>
-    </li>
-    <li> <a class="head">员工合同</a>
-      <ul>
-        <li><a href="edu/addTrain.jsp" target="rightFrame">档案录入</a></li>
-		<li><a href="edu/alterTrain.jsp" target="rightFrame">档案编辑</a></li>
-		<li><a href="edu/alterTrain.jsp" target="rightFrame">档案查看</a></li>
+        <li><a href="${pageContext.request.contextPath }/RecordActionServlet?method=add&entity=record" target="rightFrame">记录履历</a></li>
+		<li><a href="${pageContext.request.contextPath }/RecordActionServlet?method=edit&entity=record" target="rightFrame">修改履历信息</a></li>
+		<li><a href="${pageContext.request.contextPath }/RecordActionServlet?method=view&entity=record" target="rightFrame">查看履历信息</a></li>
       </ul>
     </li>
     <li> <a class="head">奖惩管理</a>

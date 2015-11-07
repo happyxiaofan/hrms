@@ -34,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 		
 		window.onload = function(){
-			document.getElementById("searchBox").style.display="block"
+			document.getElementById("searchBox").style.display="block";
 		}
 	</script>
   </head>
