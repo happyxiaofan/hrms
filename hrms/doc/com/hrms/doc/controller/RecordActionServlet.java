@@ -63,8 +63,9 @@ public class RecordActionServlet extends HttpServlet {
 		ServletConfig config =  getServletConfig();
 		String className =config.getInitParameter(entity);
 		try {
+			//交给具体的action处理
 			action = (Action) Class.forName(className).newInstance();
-			//业务方法
+			//业务方法，如果有返回值就返回
 			action.execute(method, request, response);
 			//路径跳转
 			String path = action.execute(request, response);

@@ -6,18 +6,30 @@ public class Record {
 	private String job;
 	private String edu;
 	private String work;
-	private String start_time;
-	private String end_time;
+	private String start;
+	private String end;
 	
 	
+	public String getStart() {
+		return start;
+	}
+	public void setStart(String start) {
+		this.start = start;
+	}
+	public String getEnd() {
+		return end;
+	}
+	public void setEnd(String end) {
+		this.end = end;
+	}
 	public Record(String dept, String job, String edu, String work,
 			String start_time, String end_time) {
 		this.dept = dept;
 		this.job = job;
 		this.edu = edu;
 		this.work = work;
-		this.start_time = start_time;
-		this.end_time = end_time;
+		this.start = start_time;
+		this.end = end_time;
 	}
 	public Record() {
 		// TODO Auto-generated constructor stub
@@ -46,18 +58,7 @@ public class Record {
 	public void setWork(String work) {
 		this.work = work;
 	}
-	public String getStart() {
-		return start_time;
-	}
-	public void setStart(String start_time) {
-		this.start_time = start_time;
-	}
-	public String getEnd() {
-		return end_time;
-	}
-	public void setEnd(String end_time) {
-		this.end_time = end_time;
-	}
+	
 	
 	
 }

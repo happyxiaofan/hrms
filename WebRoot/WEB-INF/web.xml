@@ -159,6 +159,21 @@
         <param-name>recordView</param-name>
         <param-value>/WEB-INF/doc/recordView.jsp</param-value>
     </init-param>
+    <init-param>
+    	 <!-- jsp路径映射 -->
+        <param-name>forward</param-name>
+        <param-value>/WEB-INF/doc/recordView.jsp</param-value>
+    </init-param>
+    <init-param>
+    	 <!-- jsp路径映射 -->
+        <param-name>success</param-name>
+        <param-value>/WEB-INF/doc/success.jsp</param-value>
+    </init-param>
+    <init-param>
+    	 <!-- jsp路径映射 -->
+        <param-name>updateRecord</param-name>
+        <param-value>/WEB-INF/doc/updateRecord.jsp</param-value>
+    </init-param>
   </servlet>
 
 

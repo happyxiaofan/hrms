@@ -82,4 +82,54 @@ public class RecordManager {
 		}
 		return records;
 	}
+	
+	public ResultSet query(String sql, List<Object> param) throws SQLException {
+		ResultSet rs = null;
+		stmt = conn.prepareStatement(sql);
+		if (param != null && param.size() > 0) {
+			for (int i = 0; i < param.size(); i++) {
+				stmt.setObject(i + 1, param.get(i));
+			}
+		}
+		rs = stmt.executeQuery();
+		return rs;
+	}
+	
+	public int deleteRecordById(String dept) {
+		int flag = 0;
+		try {
+			sql = "delete from t_doc_record where dept='"+dept+"'";
+			stmt = conn.prepareStatement(sql);
+			flag = stmt.executeUpdate();
+			conn.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			DBUtils.release(null, stmt, null);
+		}
+		return flag;
+	}
+	
+	public int updateRecord(Record record) {
+		int flag = 0;
+		try {
+			sql = "update t_doc_record set job=?,edu=?,work=?,start_time=?,end_time=? where dept=?";
+			stmt = conn.prepareStatement(sql);
+			stmt.setObject(1, record.getJob());
+			stmt.setObject(2, record.getEdu());
+			stmt.setObject(3, record.getWork());
+			stmt.setObject(4, record.getStart());
+			stmt.setObject(5, record.getEnd());
+			stmt.setObject(6, record.getDept());
+			
+			flag = stmt.executeUpdate();
+			
+			conn.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			DBUtils.release(null, stmt, null);
+		}
+		return flag;
+	}
 }
