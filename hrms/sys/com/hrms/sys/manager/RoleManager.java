@@ -115,5 +115,25 @@ public class RoleManager {
 		}
 		return null;
 	}
+
+	public String queryRoleName(String module_role_id) {
+		String role_name = null;
+		ResultSet rs = null;
+		try {
+			sql = "select role_name from t_role where role_id='" + module_role_id + "'";
+			stmt = conn.prepareStatement(sql);
+			
+			rs = stmt.executeQuery();
+			if(rs.next()){
+				role_name = rs.getString("role_name");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			DBUtils.release(rs, stmt, null);
+		}
+		return role_name;
+	}
 	
 }

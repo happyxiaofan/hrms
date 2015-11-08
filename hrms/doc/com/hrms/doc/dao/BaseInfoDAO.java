@@ -30,7 +30,7 @@ public class BaseInfoDAO {
 				info.setGender(rs.getString("gender"));
 				info.setEducation(rs.getString("edu"));
 				info.setDegree(rs.getString("degree"));
-				info.setStatus(rs.getInt("status"));
+				info.setStatus(rs.getString("status"));
 				infos.add(info);
 			}
 		} catch (SQLException e) {

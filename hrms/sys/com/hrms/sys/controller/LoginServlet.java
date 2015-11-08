@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet {
 			}else if(role_name.equals("档案管理员")){
 				request.getRequestDispatcher("/doc_main.jsp").forward(request, response);
 			}else if(role_name.equals("培训人员")){
-				
+				request.getRequestDispatcher("/edu_main.jsp").forward(request, response);
 			}
 			
 		}else{//验证失败

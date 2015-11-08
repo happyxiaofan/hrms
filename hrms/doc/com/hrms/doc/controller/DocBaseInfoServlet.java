@@ -99,7 +99,7 @@ public class DocBaseInfoServlet extends HttpServlet {
 							info.setDegree(degree);
 						}else if(fileItem.getFieldName().equals("status")){
 							String status = fileItem.getString("utf-8");
-							info.setStatus(Integer.parseInt(status));
+							info.setStatus(status);
 						}
 					}else{//文件上传域
 						//获取服务所在的绝对路径
@@ -123,7 +123,6 @@ public class DocBaseInfoServlet extends HttpServlet {
 					}
 				}
 				
-				
 				int flag = manager.submitBaseInfo(info);
 				if(flag > 0){
 					request.setAttribute("success", "录入成功");
@@ -135,10 +134,10 @@ public class DocBaseInfoServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}else if(item.equals("view") || item.equals("edit")){	//查看信息
+		}else if(item.equals("view")){	//查看信息
 			
 			int pagenum = 1;
-			int pagesize = 1;
+			int pagesize = 5;
 			
 			if(request.getParameter("pagenum")!=null) {
 				pagenum = Integer.parseInt(request.getParameter("pagenum"));
@@ -165,18 +164,44 @@ public class DocBaseInfoServlet extends HttpServlet {
 			page.setPagecount(pagecount);
 			page.setRecordcount(recordcount);
 			
-			if(item.equals("edit")){
-				request.setAttribute("edit", "edit");
-			}else if(item.equals("view")){
-				request.setAttribute("edit", "view");
-			}
-				
-			
-			
 			request.getSession().setAttribute("infos", infos);
 			request.getSession().setAttribute("page", page);
 			request.getRequestDispatcher("/WEB-INF/doc/baseInfoView.jsp").forward(request, response);
-		}else if(item.equals("edit2")){
+		}else if(item.equals("edit")){
+			int pagenum = 1;
+			int pagesize = 5;
+			
+			if(request.getParameter("pagenum")!=null) {
+				pagenum = Integer.parseInt(request.getParameter("pagenum"));
+			}
+			if(request.getParameter("pagesize")!=null) {
+				pagesize = Integer.parseInt(request.getParameter("pagesize"));
+			}
+			
+			int start = pagesize * pagenum - pagesize;
+			int end = pagesize * pagenum;
+			BaseInfoDAO baseInfoDAO = new BaseInfoDAO();
+			List<BaseInfo> infos = baseInfoDAO.pageQueryBaseInfo(start, end);
+			
+			int recordcount = baseInfoDAO.getRecordCount();//调用dao返回总记录数
+			int pagecount = recordcount / pagesize;//计算页数
+			if(recordcount%pagesize!=0) {
+				pagecount++;
+			}
+			
+			//填充page对象
+			Page page = new Page();
+			page.setPagesize(pagesize);
+			page.setPagenum(pagenum);
+			page.setPagecount(pagecount);
+			page.setRecordcount(recordcount);
+			
+			request.getSession().setAttribute("infos", infos);
+			request.getSession().setAttribute("page", page);
+			request.getRequestDispatcher("/WEB-INF/doc/baseInfoEdit.jsp").forward(request, response);
+		}
+		
+		else if(item.equals("edit2")){
 			String e_name = request.getParameter("e_name");
 			String gender = request.getParameter("gender");
 			String edu = request.getParameter("edu");
@@ -188,17 +213,15 @@ public class DocBaseInfoServlet extends HttpServlet {
 			info.setGender(gender);
 			info.setEducation(edu);
 			info.setDegree(degree);
-			info.setStatus(Integer.parseInt(status));
+			info.setStatus(status);
 			request.setAttribute("info", info);
 			request.getRequestDispatcher("/WEB-INF/doc/updateBaseInfo.jsp").forward(request, response);
 			
 		}else if(item.equals("delete")){
 			String e_name = new String(request.getParameter("e_name").getBytes("ISO-8859-1"),"utf-8");
 			int flag = manager.deleteBaseInfoByEName(e_name);
-			if(flag > 0){
-				request.setAttribute("edit", "edit");
-				request.getRequestDispatcher("/WEB-INF/doc/baseInfoView.jsp").forward(request, response);
-			}
+			request.setAttribute("success", "删除成功");
+			request.getRequestDispatcher("/WEB-INF/doc/success.jsp").forward(request, response);
 		}else if(item.equals("update")){
 			String e_name = request.getParameter("e_name");
 			String gender = request.getParameter("gender");
@@ -211,13 +234,12 @@ public class DocBaseInfoServlet extends HttpServlet {
 			info.setGender(gender);
 			info.setEducation(edu);
 			info.setDegree(degree);
-			info.setStatus(Integer.parseInt(status));
+			info.setStatus(status);
 			
 			int flag = manager.updateBaseInfo(info);
-			if(flag==0){
-				request.setAttribute("success", "成功");
-				request.getRequestDispatcher("/WEB-INF/doc/success.jsp").forward(request, response);
-			}
+			request.setAttribute("success", "更新成功");
+			request.getRequestDispatcher("/WEB-INF/doc/success.jsp").forward(request, response);
+			
 		}
 	}
 

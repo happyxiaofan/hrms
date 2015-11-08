@@ -81,7 +81,7 @@ public class ArchiveServlet extends HttpServlet {
 			
 			request.setAttribute("success", "success");
 			request.getRequestDispatcher("/WEB-INF/doc/success.jsp").forward(request, response);
-		}else if(item.equals("view") || item.equals("edit")){
+		}else if(item.equals("view")){
 			
 			int pagenum = 1;
 			int pagesize = 15;
@@ -111,17 +111,41 @@ public class ArchiveServlet extends HttpServlet {
 			page.setPagecount(pagecount);
 			page.setRecordcount(recordcount);
 			
-			if(item.equals("edit")){
-				request.setAttribute("edit", "edit");
-			}else if(item.equals("view")){
-				request.setAttribute("edit", "view");
-			}
-				
-			
-			
 			request.getSession().setAttribute("archives", archives);
 			request.getSession().setAttribute("page", page);
 			request.getRequestDispatcher("/WEB-INF/doc/archiveView.jsp").forward(request, response);
+		}else if(item.equals("edit")){
+			int pagenum = 1;
+			int pagesize = 15;
+			
+			if(request.getParameter("pagenum")!=null) {
+				pagenum = Integer.parseInt(request.getParameter("pagenum"));
+			}
+			if(request.getParameter("pagesize")!=null) {
+				pagesize = Integer.parseInt(request.getParameter("pagesize"));
+			}
+			
+			int start = pagesize * pagenum - pagesize;
+			int end = pagesize * pagenum;
+			ArchiveDAO archiveDAO = new ArchiveDAO();
+			List<Archive> archives = archiveDAO.pageQueryArchive(start, end);
+			
+			int recordcount = archiveDAO.getRecordCount();//调用dao返回总记录数
+			int pagecount = recordcount / pagesize;//计算页数
+			if(recordcount%pagesize!=0) {
+				pagecount++;
+			}
+			
+			//填充page对象
+			Page page = new Page();
+			page.setPagesize(pagesize);
+			page.setPagenum(pagenum);
+			page.setPagecount(pagecount);
+			page.setRecordcount(recordcount);
+			
+			request.getSession().setAttribute("archives", archives);
+			request.getSession().setAttribute("page", page);
+			request.getRequestDispatcher("/WEB-INF/doc/archiveEdit.jsp").forward(request, response);
 		}else if(item.equals("edit2")){
 			String a_id = request.getParameter("a_id");
 			String e_id = request.getParameter("e_id");

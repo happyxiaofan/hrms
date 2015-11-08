@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.hrms.sys.entity.Employee;
 import com.hrms.sys.entity.Module;
 import com.hrms.sys.entity.Role;
 import com.hrms.sys.manager.ModuleManager;
@@ -60,6 +61,36 @@ public class DisModuleRoleServlet extends HttpServlet {
 			
 			request.getRequestDispatcher("/WEB-INF/sys/disModuleRole.jsp").forward(request, response);
 			
+		}else if(item.equals("disRole")){
+			String[]  module_role_ids = request.getParameterValues("moduleRole");
+			String[] module_ids = request.getParameterValues("module_id");
+			String[] module_names = request.getParameterValues("module_name");
+			
+			
+			//获取所有的模块
+			List<Module> modules = moduleManager.queryAllModules();
+			
+			for(int i=0;i<module_role_ids.length;i++){
+				Module module = modules.get(i);
+				
+				module.setM_id(module_ids[i]);
+				module.setM_name(module_names[i]);
+				module.setRole_id(module_role_ids[i]);
+				
+				moduleManager.updateModuleById(module.getM_id(), module_role_ids[i]);
+			}
+			
+			for (Module module : modules) {
+				String module_role_id = module.getRole_id();
+				if(module_role_id == null){
+					continue;
+				}
+				String  module_role_name = roleManager.queryRoleName(module_role_id);
+				module.setModule_role_name(module_role_name);
+			}
+			
+			request.setAttribute("modules", modules);
+			request.getRequestDispatcher("/WEB-INF/sys/listModule2.jsp").forward(request, response);
 		}
 	}
 

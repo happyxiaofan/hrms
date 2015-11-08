@@ -79,36 +79,27 @@ body {
  <div height="100%">
   <ul id="navigation">
   
-    <!-- 人事调配模块 -->
-    <li> <a class="head">人事调动管理</a>
+    <li> <a class="head">人事变动</a>
         <ul>
-        <li><a href="pa/pa_search.jsp" target="rightFrame">人事信息查询</a></li>
-       
-        <li><a href="pa/pa_viewEmp.jsp" target="rightFrame">人事信息变动</a></li>
+        <li><a href="${pageContext.request.contextPath}/listpChange?item=edit" target="rightFrame">人事调动管理</a></li>
+        <li><a href="${pageContext.request.contextPath}/listpChange?item=add" target="rightFrame">增加信息</a></li>
       </ul>
     </li>
-    <li> <a class="head">新进员工</a>
+    <li> <a class="head">职称聘任管理</a>
       <ul>
-        <li><a href="pa/pa_newEmp.jsp" target="rightFrame">查看信息</a></li>
-        <li></li>
+        <li><a href="" target="rightFrame">增加信息</a></li>
+        <li>
+	        <a href="${pageContext.request.contextPath}/engageRecord" target="rightFrame">编辑聘任信息</a>
+        </li>
       </ul>
     </li>
-    <li> <a class="head">离退员工</a>
+    <li> <a class="head">人事信息查看</a>
       <ul>
-        <li><a href="pa/pa_lefEmp.jsp" target="rightFrame">退休员工</a></li>
-        <li><a href="pa/pa_leftEmp.jsp" target="rightFrame">离职员工</a></li>
+        <li><a href="${pageContext.request.contextPath}/newEmp" target="rightFrame">新进员工信息</a></li>
+        <li><a href="${pageContext.request.contextPath}/empRetire" target="rightFrame">符合退休员工</a></li>
+        <li><a href="${pageContext.request.contextPath}/empResign" target="rightFrame">离职员工信息</a></li>
       </ul>
     </li>
-    <li> <a class="head">职称聘任记录</a>
-      <ul>
-        <li><a href="pa/pa_pp.jsp" target="rightFrame">聘任记录</a></li>
-		<li><a href="pa/pa_pt.jsp" target="rightFrame">增加/删除</a></li>
-      </ul>
-    </li>
-    
-    <!-- 人员档案模块 -->
-    
-    
   </ul>
 </div>
   </body>

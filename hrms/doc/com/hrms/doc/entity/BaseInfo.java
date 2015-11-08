@@ -16,13 +16,13 @@ public class BaseInfo {
 	
 	private String title;
 	
-	private int status;
+	private String status;
 	
-	public int getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 

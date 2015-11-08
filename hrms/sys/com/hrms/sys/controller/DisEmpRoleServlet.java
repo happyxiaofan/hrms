@@ -131,9 +131,9 @@ public class DisEmpRoleServlet extends HttpServlet {
 			
 			for(int i=0;i<emp_role_ids.length;i++){
 				Employee emp = pList.get(i);
-				if(emp_role_ids[i].equals("请选择角色") || emp.getRole_id().equals(emp_role_ids[i])){
+				/*if(emp_role_ids[i].equals("请选择角色") || emp.getRole_id().equals(emp_role_ids[i])){
 						continue;
-				}
+				}*/
 				emp.setE_id(e_ids[i]);
 				emp.setEname(e_names[i]);
 				emp.setRole_id(emp_role_ids[i]);

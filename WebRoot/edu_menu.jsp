@@ -76,31 +76,28 @@ body {
   </head>
   
   <body>
- <div height="100%">
+  <div height="100%">
   <ul id="navigation">
-  
-    
-    <!-- 教育培训模块 -->
-    
     <li> <a class="head">教育培训</a>
       <ul>
-        <li><a href="edu/addTrain.jsp" target="rightFrame">添加培训</a></li>
-		<li><a href="edu/alterTrain.jsp" target="rightFrame">删除/修改培训</a></li>
+        <li><a href="${pageContext.request.contextPath}/listEduServlet?item=add" target="rightFrame">添加培训</a></li>
+		<li><a href="${pageContext.request.contextPath}/listEduServlet?item=edit" target="rightFrame">编辑培训记录</a></li>
+      	<li><a href="${pageContext.request.contextPath}/listEduServlet?item=view" target="rightFrame">查看培训</a></li>
       </ul>
     </li>
     <li> <a class="head">培训成绩</a>
       <ul>
-        <li><a href="addMajor.html" target="rightFrame">添加培训成绩</a></li>
-		<li><a href="listMajor.html" target="rightFrame">查看/修改培训成绩</a></li>
+        <li><a href="${pageContext.request.contextPath}/listScoreServlet?item=add" target="rightFrame">添加培训成绩</a></li>
+		<li><a href="${pageContext.request.contextPath}/listScoreServlet?item=edit" target="rightFrame">编辑培训成绩</a></li>
+		<li><a href="${pageContext.request.contextPath}/listScoreServlet?item=view" target="rightFrame">查看培训成绩</a></li>
       </ul>
     </li>
     <li> <a class="head">员工证书</a>
       <ul>
-        <li><a href="addMajor.html" target="rightFrame">添加员工证书</a></li>
-		<li><a href="listMajor.html" target="rightFrame">查看/修改员工证书</a></li>
+		<li><a href="${pageContext.request.contextPath}/listCertServlet" target="rightFrame">编辑员工证书</a></li>
+		<li><a href="${pageContext.request.contextPath}/listCertServlet" target="rightFrame">查看员工证书</a></li>
       </ul>
     </li>
-    
   </ul>
 </div>
   </body>

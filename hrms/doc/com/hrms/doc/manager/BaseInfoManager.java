@@ -69,7 +69,7 @@ public class BaseInfoManager {
 				info = new BaseInfo();
 				info.setE_name(rs.getString("e_name"));
 				info.setEducation(rs.getString("gender"));
-				info.setStatus(rs.getInt("status"));
+				info.setStatus(rs.getString("status"));
 				info.setPic_path(rs.getString("pic_path"));
 
 				infos.add(info);
@@ -147,7 +147,7 @@ public class BaseInfoManager {
 				info.setGender(rs.getString("gender"));
 				info.setEducation(rs.getString("edu"));
 				info.setDegree(rs.getString("degree"));
-				info.setStatus(rs.getInt("status"));
+				info.setStatus(rs.getString("status"));
 
 				infos.add(info);
 			}

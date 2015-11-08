@@ -1,0 +1,37 @@
+人力资源管理系统开发指南
+1、package说明
+	src目录下的包说明：
+	com.hrms.commons.filter包：过滤器，可以忽略，我已经封装好了
+	com.hrms.commons.utils包：这是整个系统的公共工具包，工具类都放在这个目录下
+	com.hrms.module1.controller包：这是controller，控制层代码，servlet类
+	com.hrms.module1.dao：数据库驱动程序包，我已经封装好了，在自己电脑调试的时候，只需要修改该类的usr以及pwd就行
+	com.hrms.module1.entity：实体包，实体类都放在该包下
+	com.hrms.module1.manager包：这是model层代码，所有与业务逻辑相关的类都放在这个包下面
+	hrms/doc:人事档案模块
+	hrms/pa:人事调配模块
+	hrms/edu:教育培训模块
+	hrms/sys:系统管理模块
+	以上四个模块的路径的包结构与src的目录结构保持一致，其中com.hrms.commons.filter包与com.hrms.commons.utils包下面的
+	类可以直接copy，其他包的类则需要根据业务情况进行添加或者修改。每个不同的模块要把module1改成你负责开发的那个模块名称
+2、WebRoot路径
+	res目录：存放js、css、img等静态资源
+	具体访问路径可以参考WEB-INF/login.jsp
+	doc:这是人事档案的jsp页面存放目录
+	edu：这是教育培训的jsp页面存放目录
+	pa：这是人事调配的jsp页面存放目录
+	sys：这是系统管理的jsp页面存放目录
+3、静态资源
+	静态资源包括js、css、图片等资源，如有其他需要则自行添加，并创建相应的目录
+4、web.xml配置
+	web.xml的配置我已经在web.xml文件中做了相关的注释，其他模块的开发基本上是在该配置文件上进行servlet等配置就行
+5、开发规范
+	5.1 Java类的命名规范
+	一律采用驼峰法声明变量、方法，Java类则是首字母大写
+	5.2  数据库表的命名规范
+	表：t_module_表名
+	视图：v_module_视图名
+	序列：s_module_序列名
+	5.3 jsp页面命名规范
+	一律使用小写字母，不使用驼峰法
+6、jar包的存放位置
+	jar包一律存放在WEB-INF/lib目录下，复制进去会自动把jar包添加到类路径，比较省事

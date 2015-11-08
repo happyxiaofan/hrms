@@ -39,7 +39,7 @@
 </head>
 
 <body>
-	<form action="${pageContext.request.contextPath }/disEmpRoleServlet?item=disRole" method="post">
+	<form action="${pageContext.request.contextPath }/disModuleRoleServlet?item=disRole" method="post">
 		<table width="100%" border="0" align="center" cellpadding="0"
 			cellspacing="0">
 			<tr>
@@ -76,7 +76,7 @@
 									align="center"><input type="hidden" name="module_name" value="<%=module.getM_name()%>"/><%=module.getM_name()%></div></td>
 							<td height="20" bgcolor="#FFFFFF" class="STYLE19">
 								<div align="center">
-									<select name="empRole">
+									<select name="moduleRole">
 										<option selected="selected">请选择角色
 											<%
 											for (int j = 0; j < roles.size(); j++) {
@@ -89,8 +89,6 @@
 											%>
 										
 									</select>
-									<input type="text" id="roles"/>
-									<input type="button" value="添加角色" onclick="addRoles()"/>
 								</div>
 							</td>
 

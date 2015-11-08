@@ -133,6 +133,46 @@
     <servlet-name>ArchiveServlet</servlet-name>
     <servlet-class>com.hrms.doc.controller.ArchiveServlet</servlet-class>
   </servlet>
+  
+  <!-- 教育培训模块 -->
+  <servlet>
+    <servlet-name>AddTrainServlet</servlet-name>
+    <servlet-class>com.hrms.edu.controller.AddTrainServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListEduServlet</servlet-name>
+    <servlet-class>com.hrms.edu.controller.ListEduServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteTreServlet</servlet-name>
+    <servlet-class>com.hrms.edu.controller.DeleteTreServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddScore</servlet-name>
+    <servlet-class>com.hrms.edu.controller.AddScore</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListScoreServlet</servlet-name>
+    <servlet-class>com.hrms.edu.controller.ListScoreServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteScoreServlet</servlet-name>
+    <servlet-class>com.hrms.edu.controller.DeleteScoreServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddCertServlet</servlet-name>
+    <servlet-class>com.hrms.edu.controller.AddCertServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteCertServlet</servlet-name>
+    <servlet-class>com.hrms.edu.controller.DeleteCertServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListCertServlet</servlet-name>
+    <servlet-class>com.hrms.edu.controller.ListCertServlet</servlet-class>
+  </servlet>
+  
+  
   <servlet>
     <description>This is the description of my J2EE component</description>
     <display-name>This is the display name of my J2EE component</display-name>
@@ -177,7 +217,73 @@
   </servlet>
 
 
-
+	<!-- 人事调配 -->
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>NewEmp</servlet-name>
+    <servlet-class>com.hrms.pa.controller.NewEmp</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EmpRetire</servlet-name>
+    <servlet-class>com.hrms.pa.controller.EmpRetire</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EmpResign</servlet-name>
+    <servlet-class>com.hrms.pa.controller.EmpResign</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EngageRecord</servlet-name>
+    <servlet-class>com.hrms.pa.controller.EngageRecord</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeleteEgageRcord</servlet-name>
+    <servlet-class>com.hrms.pa.controller.DeleteEgageRcord</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddpChange</servlet-name>
+    <servlet-class>com.hrms.pa.controller.AddpChange</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeletepChange</servlet-name>
+    <servlet-class>com.hrms.pa.controller.DeletepChange</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ListpChange</servlet-name>
+    <servlet-class>com.hrms.pa.controller.ListpChange</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdatepChange</servlet-name>
+    <servlet-class>com.hrms.pa.controller.UpdatepChange</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>queryInfo</servlet-name>
+    <servlet-class>com.hrms.pa.controller.queryInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateInfo</servlet-name>
+    <servlet-class>com.hrms.pa.controller.UpdateInfo</servlet-class>
+  </servlet>
 
 
 
@@ -263,8 +369,92 @@
     <servlet-name>RecordActionServlet</servlet-name>
     <url-pattern>/RecordActionServlet</url-pattern>
   </servlet-mapping>
+  
+  <!-- 教育培训模块 -->
+  <servlet-mapping>
+    <servlet-name>AddTrainServlet</servlet-name>
+    <url-pattern>/addTrainServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListEduServlet</servlet-name>
+    <url-pattern>/listEduServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteTreServlet</servlet-name>
+    <url-pattern>/deleteTreServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddScore</servlet-name>
+    <url-pattern>/addScore</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListScoreServlet</servlet-name>
+    <url-pattern>/listScoreServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteScoreServlet</servlet-name>
+    <url-pattern>/deleteScoreServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddCertServlet</servlet-name>
+    <url-pattern>/addCertServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteCertServlet</servlet-name>
+    <url-pattern>/deleteCertServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListCertServlet</servlet-name>
+    <url-pattern>/listCertServlet</url-pattern>
+  </servlet-mapping>
 
+<!-- 人事调配 -->
 
+<servlet-mapping>
+    <servlet-name>NewEmp</servlet-name>
+    <url-pattern>/newEmp</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EmpRetire</servlet-name>
+    <url-pattern>/empRetire</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EmpResign</servlet-name>
+    <url-pattern>/empResign</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EngageRecord</servlet-name>
+    <url-pattern>/engageRecord</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteEgageRcord</servlet-name>
+    <url-pattern>/deleteEgageRcord</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddpChange</servlet-name>
+    <url-pattern>/addpChange</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeletepChange</servlet-name>
+    <url-pattern>/deletepChange</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListpChange</servlet-name>
+    <url-pattern>/listpChange</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdatepChange</servlet-name>
+    <url-pattern>/updatepChange</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>queryInfo</servlet-name>
+    <url-pattern>/queryInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateInfo</servlet-name>
+    <url-pattern>/updateInfo</url-pattern>
+  </servlet-mapping>
+  
 	<!-- 欢迎页面 -->
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>

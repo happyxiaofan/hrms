@@ -97,4 +97,38 @@ private DBAccess db;
 			DBUtils.release(null, stmt, null);
 		}
 	}
+	
+		public void updateModuleById(String m_id, String role_id) {
+			try {
+				conn.setAutoCommit(false);
+				stmt = conn.prepareStatement("update t_module set role_id='"
+						+ role_id + "' where module_id='" + m_id + "'");
+				stmt.executeUpdate();
+				conn.commit();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				DBUtils.release(null, stmt, null);
+			}
+		}
+		
+		public String queryRoleName(String module_role_id) {
+			String role_name = null;
+			ResultSet rs = null;
+			try {
+				sql = "select role_name from t_role where role_id='" + module_role_id + "'";
+				stmt = conn.prepareStatement(sql);
+				
+				rs = stmt.executeQuery();
+				if(rs.next()){
+					role_name = rs.getString("role_name");
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally{
+				DBUtils.release(rs, stmt, null);
+			}
+			return role_name;
+		}
 }

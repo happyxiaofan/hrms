@@ -108,10 +108,8 @@ body {
 								align="center">模块编号</div></td>
 						<td width="12%" height="20" bgcolor="d3eaef" class="STYLE6"><div
 								align="center">模块名称</div></td>
-						<td width="21%" height="20" bgcolor="d3eaef" class="STYLE6"><div
-								align="center">
-								<span class="STYLE10">基本操作</span>
-							</div></td>
+								<td width="12%" height="20" bgcolor="d3eaef" class="STYLE6"><div
+								align="center">角色</div></td>
 					</tr>
 					
 					 <%
@@ -128,16 +126,13 @@ body {
 								align="center"><%=module.getM_id()%></div></td>
 						<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=module.getM_name()%></div></td>
-						
-						<td height="20" bgcolor="#FFFFFF"><div align="center">
-								<span class="STYLE19"><a href="${pageContext.request.contextPath}/moduleServlet?item=deleteModule&m_id=<%=module.getM_id() %>">删除 </a>| <a
-									href="${pageContext.request.contextPath}/moduleServlet?item=view&m_id=<%=module.getM_id() %>&m_name=<%=module.getM_name() %>">查看</a></span>
-							</div></td>
+						<td width="12%" height="20" bgcolor="d3eaef" class="STYLE6"><div
+								align="center"><%=module.getModule_role_name()%></div></td>
 					</tr>
 					<%		} 
 						}
 					%>
-					
+					</table>
 				</table>
   </body>
 </html>

@@ -65,7 +65,7 @@ body {
 			var pagesize = document.getElementById("pagesize").value;
 			var recordcount = document.getElementById("recordcount").value;
 			if(pagesize!="" && parseInt(pagesize)<parseInt(recordcount)) {
-				location.href = "docBaseInfoServlet?item=view&edit="+editAreaValue()+"&pagesize=" + pagesize;
+				location.href = "docBaseInfoServlet?item=view&pagesize=" + pagesize;
 			}
 		}
 		
@@ -74,22 +74,10 @@ body {
 			var pagecount = document.getElementById("pagecount").value;
 			var pagesize = document.getElementById("pagesize").value;
 			if(pagesize!="" && pagenum!="" && parseInt(pagenum)<parseInt(pagecount)) {
-				location.href = "docBaseInfoServlet?item=view&edit="+editAreaValue()+"&pagesize=" + pagesize + "&pagenum=" + pagenum;
+				location.href = "docBaseInfoServlet?item=view&pagesize=" + pagesize + "&pagenum=" + pagenum;
 			}
 		}
 		
-		function editAreaValue(){
-			return document.getElementById("editValue").value;
-		}
-		window.onload = function(){
-			var editValue = document.getElementById("editValue").value;
-			if(editValue=="view"){
-				var editArea = document.getElementById("editArea");
-				editArea.style.display="none";
-			}else{
-				
-			}
-		}
 	</script>
   </head>
   
@@ -130,11 +118,6 @@ body {
 									align="center">
 									<span class="STYLE10">状态</span>
 								</div></td>
-							<td width="50px" height="20" bgcolor="d3eaef" class="STYLE6" ><div
-									align="center" class="editArea">
-									<span class="STYLE10">基本操作</span>
-								</div></td>
-							
 						</tr>
 						<c:forEach items="${infos}" var="info">
 			   				<tr>
@@ -159,12 +142,6 @@ body {
 								<td height="20" width="50px"bgcolor="#FFFFFF" class="STYLE19"><div
 									align="center">${info.status }</div></td>
 								
-								<td height="20" bgcolor="#FFFFFF" width="60px"><div align="center" id="editArea">
-									<span class="STYLE19"><a
-										href="${pageContext.request.contextPath}/docBaseInfoServlet?item=delete&e_name=${info.e_name }">删除
-									</a> | <a
-										href="${pageContext.request.contextPath}/docBaseInfoServlet?item=edit2&e_name=${info.e_name}&gender=${info.gender}&edu=${info.education}&degree=${info.degree}&status=${info.status}">编辑</a></span>
-								</div></td>
 			   				</tr>
 			   			</c:forEach>
 						<!-- 分页 -->
@@ -179,8 +156,8 @@ body {
 			   							上一页
 			   						</c:when>
 			   						<c:otherwise>
-			   							<a href="docBaseInfoServlet?item=view&edit=${editValue}&pagenum=1&pagesize=15" id="pageFirst">首页</a>
-			   							<a href="docBaseInfoServlet?item=view&edit=${editValue}&pagenum=${page.pagenum-1}&pagesize=${page.pagesize}">上一页</a>
+			   							<a href="docBaseInfoServlet?item=view&pagenum=1&pagesize=15" id="pageFirst">首页</a>
+			   							<a href="docBaseInfoServlet?item=view&pagenum=${page.pagenum-1}&pagesize=${page.pagesize}">上一页</a>
 			   						</c:otherwise>
 			   					</c:choose>
 			   					<c:choose>
@@ -189,8 +166,8 @@ body {
 			   							尾页
 			   						</c:when>
 			   						<c:otherwise>
-			   							<a href="docBaseInfoServlet?item=view&edit=${editValue}&pagenum=${page.pagenum+1}&pagesize=${page.pagesize}">下一页</a>
-			   							<a href="docBaseInfoServlet?item=view&edit=${editValue}&pagenum=${page.pagecount}&pagesize=${page.pagesize}">尾页</a>
+			   							<a href="docBaseInfoServlet?item=view&pagenum=${page.pagenum+1}&pagesize=${page.pagesize}">下一页</a>
+			   							<a href="docBaseInfoServlet?item=view&pagenum=${page.pagecount}&pagesize=${page.pagesize}">尾页</a>
 			   						</c:otherwise>
 			   					</c:choose>
 			   					

@@ -65,7 +65,7 @@ body {
 			var pagesize = document.getElementById("pagesize").value;
 			var recordcount = document.getElementById("recordcount").value;
 			if(pagesize!="" && parseInt(pagesize)<parseInt(recordcount)) {
-				location.href = "archiveServlet?item=view&edit="+editAreaValue()+"&pagesize=" + pagesize;
+				location.href = "archiveServlet?item=view"+"&pagesize=" + pagesize;
 			}
 		}
 		
@@ -74,22 +74,10 @@ body {
 			var pagecount = document.getElementById("pagecount").value;
 			var pagesize = document.getElementById("pagesize").value;
 			if(pagesize!="" && pagenum!="" && parseInt(pagenum)<parseInt(pagecount)) {
-				location.href = "archiveServlet?item=view&edit="+editAreaValue()+"&pagesize=" + pagesize + "&pagenum=" + pagenum;
+				location.href = "archiveServlet?item=view"+"&pagesize=" + pagesize + "&pagenum=" + pagenum;
 			}
 		}
 		
-		function editAreaValue(){
-			return document.getElementById("editValue").value;
-		}
-		window.onload = function(){
-			var editValue = document.getElementById("editValue").value;
-			if(editValue=="view"){
-				var editArea = document.getElementById("editArea");
-				editArea.style.display="none";
-			}else{
-				
-			}
-		}
 	</script>
   </head>
   
@@ -97,7 +85,6 @@ body {
     <form>
   <input type="hidden" value="${page.recordcount}" id="recordcount" /> 
   <input type="hidden" value="${page.pagecount}" id="pagecount" />
-  <input type="hidden" value="${edit}" id="editValue"/>
    <table width="100%" border="0" align="center" cellpadding="0"
 			cellspacing="0">
 			<tr>
@@ -123,10 +110,6 @@ body {
 							<td width="5%" height="20" bgcolor="d3eaef" class="STYLE6">
 								<div align="center">备注</div>
 							</td>
-							<td width="50px" height="20" bgcolor="d3eaef" class="STYLE6" ><div
-									align="center" class="editArea">
-									<span class="STYLE10">基本操作</span>
-								</div></td>
 							
 						</tr>
 						<c:forEach items="${archives}" var="archive">
@@ -147,12 +130,6 @@ body {
 									align="center">${archive.a_sum }</div></td>
 								<td height="20" width="50px"bgcolor="#FFFFFF" class="STYLE19"><div
 									align="center">${archive.a_note }</div></td>
-								<td height="20" bgcolor="#FFFFFF" width="60px"><div align="center" id="editArea">
-									<span class="STYLE19"><a
-										href="${pageContext.request.contextPath}/archiveServlet?item=delete&a_id=${archive.a_id }">删除
-									</a> | <a
-										href="${pageContext.request.contextPath}/archiveServlet?item=edit2&a_id=${archive.a_id }&e_id=${archive.a_id }&a_num=${archive.a_num }&a_name=${archive.a_name}&a_sum=${archive.a_sum }&a_note=${archive.a_note}">编辑</a></span>
-								</div></td>
 			   				</tr>
 			   			</c:forEach>
 						<!-- 分页 -->
@@ -167,8 +144,8 @@ body {
 			   							上一页
 			   						</c:when>
 			   						<c:otherwise>
-			   							<a href="archiveServlet?item=view&edit=${editValue}&pagenum=1&pagesize=1" id="pageFirst">首页</a>
-			   							<a href="archiveServlet?item=view&edit=${editValue}&pagenum=${page.pagenum-1}&pagesize=${page.pagesize}">上一页</a>
+			   							<a href="archiveServlet?item=view&pagenum=1&pagesize=5" id="pageFirst">首页</a>
+			   							<a href="archiveServlet?item=view&pagenum=${page.pagenum-1}&pagesize=${page.pagesize}">上一页</a>
 			   						</c:otherwise>
 			   					</c:choose>
 			   					<c:choose>
@@ -177,8 +154,8 @@ body {
 			   							尾页
 			   						</c:when>
 			   						<c:otherwise>
-			   							<a href="archiveServlet?item=view&edit=${editValue}&pagenum=${page.pagenum+1}&pagesize=${page.pagesize}">下一页</a>
-			   							<a href="archiveServlet?item=view&edit=${editValue}&pagenum=${page.pagecount}&pagesize=${page.pagesize}">尾页</a>
+			   							<a href="archiveServlet?item=view&pagenum=${page.pagenum+1}&pagesize=${page.pagesize}">下一页</a>
+			   							<a href="archiveServlet?item=view&pagenum=${page.pagecount}&pagesize=${page.pagesize}">尾页</a>
 			   						</c:otherwise>
 			   					</c:choose>
 			   					
