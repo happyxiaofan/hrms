@@ -22,32 +22,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 	<style type="text/css">
-		.searchBox{width:400px;border:1px solid balck;margin-left:200px;display: none;}
+		.searchBox{width:400px;border:1px solid balck;margin-left:200px;display: block;}
 		.datalist{border:1px solid #0058a3;font-family:Arial;border-collapse:collapse;background-color:#eaf5ff;font-size:14px;}
 		.datalist td{border:1px solid #0058a3;text-align:left;padding-top:4px; padding-bottom:4px;padding-left:10px; padding-right:10px;}
-		.datalist tr.altrow{background-color:#c7e5ff;
+		.datalist tr.altrow{background-color:#c7e5ff};
 	</style>
 	<script type="text/javascript">
 		function search(){
 			document.getElementById("search").submit();
-			document.getElementById("searchBox").style.display="block";
 		}
-		
-		window.onload = function(){
-			document.getElementById("searchBox").style.display="block";
+		function inds(){
+			var inds = document.getElementById("in").value;
+			if(inds=="no"){
+				alert("无结果!");
+			}
 		}
 	</script>
   </head>
   
   <body>
     <form id="search" action="${pageContext.request.contextPath }/baseInfoSearch?item=search" method="post">
+    	<input type="hidden" id="in" value="${in} ">
     	<div style="margin-left:200px;width:40%">
-    	<input type="text" name="content" onchange="search()">&nbsp;&nbsp;&nbsp;
-    	<input type="submit" value="search" />
+    	<input type="text" name="content">&nbsp;&nbsp;&nbsp;
+    	<input type="button" value="搜索" onclick="search()"/>
     	</div>
     </form>
-    <div class="searchBox" id="searchBox">
-    	<table width="100%" class="datalist">
+    <div class="searchBox" id="searchBox" >
+    	<table width="100%" class="datalist" onmouseup="inds()">
     		<tr class="altrow">
     			<td>姓名</td>
     			<td>性别</td>
@@ -55,15 +57,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			<td>学位</td>
     			<td>状态</td>
     		</tr>
-    		<c:forEach items="${infos}" var="info" >
-    		<tr>
-    			<td>${info.e_name}</td>
-    			<td>${info.gender}</td>
-    			<td>${info.education}</td>
-    			<td>${info.degree}</td>
-    			<td>${info.status}</td>
-    		</tr>
-    		</c:forEach>
+    		<c:choose>
+				<c:when test="${infos.size()>0}">
+					<c:forEach items="${infos}" var="info" >
+			    		<tr>
+			    			<td>${info.e_name}</td>
+			    			<td>${info.gender}</td>
+			    			<td>${info.education}</td>
+			    			<td>${info.degree}</td>
+			    			<td>${info.status}</td>
+			    		</tr>
+		    		</c:forEach>
+				</c:when>
+			</c:choose>
     	</table>
     </div>
   </body>

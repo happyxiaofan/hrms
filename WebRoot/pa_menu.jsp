@@ -87,9 +87,9 @@ body {
     </li>
     <li> <a class="head">职称聘任管理</a>
       <ul>
-        <li><a href="" target="rightFrame">增加信息</a></li>
+        <li><a href="${pageContext.request.contextPath}/engageRecord?item=add" target="rightFrame">增加信息</a></li>
         <li>
-	        <a href="${pageContext.request.contextPath}/engageRecord" target="rightFrame">编辑聘任信息</a>
+	        <a href="${pageContext.request.contextPath}/engageRecord?item=edit" target="rightFrame">编辑聘任信息</a>
         </li>
       </ul>
     </li>

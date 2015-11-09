@@ -180,6 +180,10 @@ public class ArchiveServlet extends HttpServlet {
 				request.setAttribute("success", "success");
 				request.getRequestDispatcher("/WEB-INF/doc/success.jsp").forward(request, response);
 			}
+		}else if(item.equals("export")){
+			String exportToExcel = request.getParameter("exportToExcel");
+			request.setAttribute("exportToExcel", exportToExcel);
+			request.getRequestDispatcher("/WEB-INF/doc/archiveView.jsp").forward(request, response);
 		}
 	}
 

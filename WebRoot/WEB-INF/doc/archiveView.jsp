@@ -5,7 +5,13 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%-- <%@ page contentType="application/msexcel" %>
+<!-- 以上这行设定本网页为excel格式的网页 -->
+<%
+   response.setHeader("Content-disposition","attachment; filename=test2.xls");
+   //以上这行设定传送到前端浏览器时的档名为test1.xls
+   //就是靠这一行，让前端浏览器以为接收到一个excel档 
+%> --%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -85,12 +91,25 @@ body {
     <form>
   <input type="hidden" value="${page.recordcount}" id="recordcount" /> 
   <input type="hidden" value="${page.pagecount}" id="pagecount" />
+  
+  <%
+        String exportToExcel = request.getParameter("exportToExcel");
+        if (exportToExcel != null
+                && exportToExcel.toString().equalsIgnoreCase("YES")) {
+            response.setContentType("application/vnd.ms-excel");
+            response.setHeader("Content-Disposition", "inline; filename="
+                    + "excel.xls");
+ 
+        }
+    %>
    <table width="100%" border="0" align="center" cellpadding="0"
 			cellspacing="0">
+			
 			<tr>
 				<td>
 				<table width="100%" border="0" cellpadding="0"
 						cellspacing="1" bgcolor="#a8c7ce">
+						
 						<tr>
 							<td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
 									align="center">
@@ -165,5 +184,12 @@ body {
 					</table>
    </table>
    </form>
+   <%
+        if (exportToExcel == null) {
+    %>
+    <a href="archiveServlet?item=export&exportToExcel=YES">另存为excel</a>
+    <%
+        }
+    %>
   </body>
 </html>

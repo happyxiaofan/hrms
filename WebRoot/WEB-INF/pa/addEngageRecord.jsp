@@ -19,7 +19,7 @@ font-size:18px;}
   
   <body>
 
-    <form action="${pageContext.request.contextPath}/addDept?item=add" method="post">
+    <form action="${pageContext.request.contextPath}/addEngageRecord?item=add" method="post">
     	<table>
     	<tr>
         	<td>编号：</td>

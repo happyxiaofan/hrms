@@ -67,7 +67,9 @@ public class BaseInfoSearch extends HttpServlet {
 			List<BaseInfo> infos = manager.querybaseInfoByKey(content);
 			if(infos.size() > 0){
 				request.setAttribute("infos", infos);
-				request.setAttribute("display", "block");
+				request.getRequestDispatcher("/WEB-INF/doc/baseInfoSearch.jsp").forward(request, response);
+			}else{
+				request.setAttribute("in", "no");
 				request.getRequestDispatcher("/WEB-INF/doc/baseInfoSearch.jsp").forward(request, response);
 			}
 		}

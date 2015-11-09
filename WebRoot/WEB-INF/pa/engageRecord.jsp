@@ -102,8 +102,9 @@ body {
 								align="center"><%=eremp.getEmp_date() %></div></td>
 						<td height="20" bgcolor="#FFFFFF">
 							<div align="center">
-								<span class="STYLE19"><a href="${pageContext.request.contextPath}/deleteEgageRcord?emp_id=<%=eremp.getEmp_id() %>">删除 </a>| <a
-									href="">添加</a></span>
+								<span class="STYLE19"><a href="${pageContext.request.contextPath}/deleteEgageRcord?emp_id=<%=eremp.getEmp_id() %>">删除 </a>| 
+								<a
+									href="${pageContext.request.contextPath}/addEngageRecord?item=view&recordno=<%=eremp.getRecordno() %>&emp_id=<%=eremp.getEmp_id() %>&emp_name=<%=eremp.getEmp_name() %>&emp_post=<%=eremp.getEmp_post() %>&emp_date=<%=eremp.getEmp_date() %>">修改</a></span>
 							</div>
 						</td>
 					</tr>		

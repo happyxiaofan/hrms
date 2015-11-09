@@ -91,4 +91,18 @@ public class ScoreManager {
 			e.printStackTrace();
 		}
 	}
+	
+	public void updateScore(Score score){
+		try {
+			String sql = "update t_edu_score set s_name='"+score.getsName()+"',"
+					+ "s_class='"+score.getsClass()+"',s_score='"+score.getsScore()+"' "
+					+ "where s_id='"+score.getsId()+"'";
+			System.out.println(sql);
+			stmt = conn.prepareStatement(sql);
+			stmt.executeUpdate();
+			conn.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }

@@ -30,6 +30,14 @@ public class ListScoreServlet extends HttpServlet {
 			//添加到Session
 			request.setAttribute("scores", scores);
 			request.getRequestDispatcher("/WEB-INF/edu/alterScore.jsp").forward(request, response);
+		}else if(item.equals("update")){
+			
+		}else if(item.equals("view")){
+			ScoreManager sManager=new ScoreManager();
+			List<Score> scores = sManager.queryAllScores();
+			//添加到Session
+			request.setAttribute("scores", scores);
+			request.getRequestDispatcher("/WEB-INF/edu/queryScore.jsp").forward(request, response);
 		}
 	}
 }

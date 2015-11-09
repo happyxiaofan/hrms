@@ -31,14 +31,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<body>
   	<div align="center">
   	<table width="80%" height="200" border="1" cellpadding="0" cellspacing="0" class="tbl">
-  		<tr bgcolor="#d3eaef"><th colspan="8" align="center" color="#001213">成绩查询表</th></tr>
+  		<tr bgcolor="#d3eaef"><th colspan="7" align="center" color="#001213">成绩查询表</th></tr>
   		<tr align="center">
   			<td><input type="checkbox"></td>
   			<td>序号</td>
   			<td>人员姓名</td>
   			<td>课程</td>
   			<td>成绩</td>
-  			<td>操作</td>
  		</tr>
   			<%
 				List<Score> scores = (List<Score>)request.getAttribute("scores");
@@ -59,24 +58,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						align="center"><%=score.getsClass() %></div></td>
 				<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
 						align="center"><%=score.getsScore() %></div></td>
-				<td height="20" bgcolor="#FFFFFF">
-					<div align="center">
-						<span class="STYLE19">
-							<a href="${pageContext.request.contextPath}/deleteScoreServlet?sId=<%=score.getsId() %>">
-								删除
-							</a>| 
-							<a href="${pageContext.request.contextPath}/listEduServlet?item=update&sId=<%=score.getsId()%>
-							&sName=<%=score.getsName()%>&sClass=<%=score.getsClass()%>&sScore=<%=score.getsScore()%>">
-								修改
-							</a>
-						</span>
-					</div>
-				</td>
 			</tr>
 			<%} %>
- 		<tr>
+ 		<!-- <tr>
  			<td colspan="2">共有120条记录，当前第1/10页</td>
- 			<td colspan="4" align="right"><div class="btn"><input type="button" value="首页">
+ 			<td colspan="3" align="right"><div class="btn"><input type="button" value="首页">
  				<input type="button" value="上一页" >
  				<input type="button" value="下一页">
  				<input type="button" value="尾页">
@@ -84,7 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  				<input type="button" value="前往">
  				</div>
 			</td>
- 		</tr>
+ 		</tr> -->
   	</table>
   	</div>
   </body>

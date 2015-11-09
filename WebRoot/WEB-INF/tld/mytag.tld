@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"  
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"  
+     version="2.0">   
+     <tlib-version>1.0</tlib-version>   
+     <short-name>len</short-name>   
+     <function>   
+         <description>calculate string length</description><!-- 对这个EL方法的描述   -->   
+         <name>getLen</name><!-- 调用EL方法的名称 -->   
+         <function-class>com.hrms.sys.utils.UFunction</function-class>   
+         <function-signature>   
+            int getLen(java.lang.String)   
+         </function-signature>   
+         <example>${len:getLen(str)}</example><!-- 例如 -->   
+     </function>   
+  
+     <function>   
+         <description>substring</description>   
+         <name>substr</name>   
+         <function-class>com.hrms.sys.utils.UFunction</function-class>   
+         <function-signature>   
+             java.lang.String substr(java.lang.String,int,int)   
+         </function-signature>   
+     </function>
+     
+     <function>   
+         <description>lastIndex</description>   
+         <name>lastIndex</name>   
+         <function-class>com.hrms.sys.utils.UFunction</function-class>   
+         <function-signature>   
+             java.lang.String lastIndex(java.lang.String)   
+         </function-signature>   
+     </function>     
+  
+</taglib>  

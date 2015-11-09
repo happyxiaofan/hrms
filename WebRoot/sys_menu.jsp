@@ -115,6 +115,9 @@ body {
 		        <li><a href="${pageContext.request.contextPath}/disEmpRoleServlet?item=dis" target="rightFrame">用户角色分配</a></li>
 		      </ul>
 		    </li>
+		    <li> <a class="head">照片下载</a>
+		    	<ul><li><a href="${pageContext.request.contextPath}/downloadServlet?item=down" target="rightFrame">照片下载</a></li></ul>
+		    </li>
   </ul>
 </div>
   </body>

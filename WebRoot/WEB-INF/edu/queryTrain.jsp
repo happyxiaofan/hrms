@@ -45,7 +45,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-  
   <tr>
     <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce">
       <tr>
@@ -55,11 +54,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <td width="17%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center">培训ID</div></td>
         <td width="13%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center">培训项目</div></td>
         <td width="12%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center">培训人数</div></td>
-        <td width="14%" height="20" bgcolor="d3eaef" class="STYLE6">
-        	<div align="center">
-        		<span class="STYLE10">基本操作</span>
-        	</div>
-        </td>
       </tr>
      		<%
 				List<EduTrain> tres = (List<EduTrain>)request.getAttribute("tres");
@@ -78,15 +72,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						align="center"><%=tre.getTreName() %></div></td>
 				<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
 						align="center"><%=tre.getTreNumber() %></div></td>
-				<td height="20" bgcolor="#FFFFFF">
-					<div align="center">
-						<span class="STYLE19">
-							<a href="${pageContext.request.contextPath}/listEduServlet?item=delete&treId=<%=tre.getTreId() %>">删除 </a>| 
-							<a href="${pageContext.request.contextPath}/listEduServlet?item=updateTrain&treId=<%=tre.getTreId() %>
-								&treName=<%=tre.getTreName()%>&treNum=<%=tre.getTreNumber()%>">修改</a>
-						</span>
-					</div>
-				</td>
 			</tr>
 			<%} %>
     </table></td>

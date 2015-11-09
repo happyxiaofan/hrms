@@ -12,18 +12,8 @@ import com.hrms.pa.entity.EngageRecordEmp;
 import com.hrms.pa.manager.UserManager;
 
 public class EngageRecord extends HttpServlet {
-
 	
-	public EngageRecord() {
-		super();
-	}
-
-	
-	public void destroy() {
-		super.destroy(); // Just puts "destroy" string in log
-		// Put your code here
-	}
-
+	private static final long serialVersionUID = 1L;
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -32,10 +22,15 @@ public class EngageRecord extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		UserManager uManager = new UserManager();
-		List<EngageRecordEmp> eremps = uManager.queryEngageRecordEmps();
-		request.setAttribute("eremps", eremps);
-		request.getRequestDispatcher("/WEB-INF/pa/engageRecord.jsp").forward(request, response);
+		String item = request.getParameter("item");
+		if(item.equals("edit")){
+			UserManager uManager = new UserManager();
+			List<EngageRecordEmp> eremps = uManager.queryEngageRecordEmps();
+			request.setAttribute("eremps", eremps);
+			request.getRequestDispatcher("/WEB-INF/pa/engageRecord.jsp").forward(request, response);
+		}else if(item.equals("add")){
+			request.getRequestDispatcher("/WEB-INF/pa/addEngageRecord.jsp").forward(request, response);
+		}
 	}
 
 	public void init() throws ServletException {

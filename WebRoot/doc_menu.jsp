@@ -103,9 +103,9 @@ body {
     </li>
     <li> <a class="head">奖惩管理</a>
       <ul>
-        <li><a href="edu/addTrain.jsp" target="rightFrame">奖惩信息记录</a></li>
-		<li><a href="edu/alterTrain.jsp" target="rightFrame">奖惩信息编辑</a></li>
-		<li><a href="edu/alterTrain.jsp" target="rightFrame">奖惩信息查看</a></li>
+        <li><a href="${pageContext.request.contextPath }/listRewardServlet?item=add" target="rightFrame">奖惩信息记录</a></li>
+		<li><a href="${pageContext.request.contextPath }/listRewardServlet?item=edit" target="rightFrame">奖惩信息编辑</a></li>
+		<li><a href="${pageContext.request.contextPath }/listRewardServlet?item=view" target="rightFrame">奖惩信息查看</a></li>
       </ul>
     </li>
     <li> <a class="head">查询系统</a>

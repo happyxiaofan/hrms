@@ -28,7 +28,7 @@ private DBAccess db;
 	public void addCert(Cert cert) {
 		try {
 			conn.setAutoCommit(false);
-			stmt = conn.prepareStatement("insert into edu_cert(c_id,c_name,c_stu,c_tec,c_time) values('"
+			stmt = conn.prepareStatement("insert into t_edu_cert(c_id,c_name,c_stu,c_tec,c_time) values('"
 					+ cert.getcId()+ "','"
 					+ cert.getcName()+ "','"
 					+ cert.getcStu()+ "','"
@@ -45,7 +45,7 @@ private DBAccess db;
 		boolean flag = false;
 		ResultSet rs = null;
 		try {
-			sql = "select * from edu_train where c_id='"
+			sql = "select * from t_edu_train where c_id='"
 					+ cert.getcId() + "' and c_name='" + cert.getcName() + "'";
 			stmt = conn.prepareStatement(sql);
 			rs = stmt.executeQuery();
@@ -64,7 +64,7 @@ private DBAccess db;
 		List<Cert> certs = new ArrayList<Cert>();
 		ResultSet rs = null;
 		try {
-			 stmt = conn.prepareStatement("select * from edu_cert");
+			 stmt = conn.prepareStatement("select * from t_edu_cert");
 			 rs = stmt.executeQuery();
 			 Cert cert = null;
 			 while(rs.next()){
@@ -86,7 +86,7 @@ private DBAccess db;
 	//删除培训记录
 	public void deleteByCertId(int cId){
 		try {
-			stmt = conn.prepareStatement("delete from edu_cert where c_id='"+cId+"'");
+			stmt = conn.prepareStatement("delete from t_edu_cert where c_id='"+cId+"'");
 			stmt.executeUpdate();
 			conn.commit();
 		} catch (SQLException e) {

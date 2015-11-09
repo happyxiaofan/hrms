@@ -86,6 +86,16 @@ body {
   <input type="hidden" value="${page.recordcount}" id="recordcount" /> 
   <input type="hidden" value="${page.pagecount}" id="pagecount" />
   <input type="hidden" value="${edit}" id="editValue"/>
+   <%
+        String exportToExcel = request.getParameter("exportToExcel");
+        if (exportToExcel != null
+                && exportToExcel.toString().equalsIgnoreCase("YES")) {
+            response.setContentType("application/vnd.ms-excel");
+            response.setHeader("Content-Disposition", "inline; filename="
+                    + "excel.xls");
+ 
+        }
+    %>
    <table width="100%" border="0" align="center" cellpadding="0"
 			cellspacing="0">
 			<tr>
@@ -177,5 +187,12 @@ body {
 					</table>
    </table>
    </form>
+   <%
+        if (exportToExcel == null) {
+    %>
+    <a href="docBaseInfoServlet?item=export&exportToExcel=YES">另存为excel</a>
+    <%
+        }
+    %>
   </body>
 </html>

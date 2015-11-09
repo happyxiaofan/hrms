@@ -94,8 +94,9 @@ body {
     </li>
     <li> <a class="head">员工证书</a>
       <ul>
-		<li><a href="${pageContext.request.contextPath}/listCertServlet" target="rightFrame">编辑员工证书</a></li>
-		<li><a href="${pageContext.request.contextPath}/listCertServlet" target="rightFrame">查看员工证书</a></li>
+      	<li><a href="${pageContext.request.contextPath}/listCertServlet?item=add" target="rightFrame">添加员工证书</a></li>
+		<li><a href="${pageContext.request.contextPath}/listCertServlet?item=edit" target="rightFrame">编辑员工证书</a></li>
+		<li><a href="${pageContext.request.contextPath}/listCertServlet?item=view" target="rightFrame">查看员工证书</a></li>
       </ul>
     </li>
   </ul>

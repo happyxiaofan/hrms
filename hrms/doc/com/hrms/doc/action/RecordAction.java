@@ -32,7 +32,7 @@ public class RecordAction implements Action {
 			return "recordAdd";
 		}else if(method.equals("edit") || method.equals("forwardEdit")){
 			return "recordEdit";
-		}else if(method.equals("view")){
+		}else if(method.equals("view") || method.equals("export")){
 			return "recordView";
 		}else if(method.equals("forward")){
 			return "recordView";
@@ -86,6 +86,9 @@ public class RecordAction implements Action {
 		}else if(method.equals("updateRecord")){
 			list = manager.queryAllDepts();
 			request.setAttribute("list", list);
+		}else if(method.equals("export")){
+			String exportToExcel = request.getParameter("exportToExcel");
+			request.setAttribute("exportToExcel", exportToExcel);
 		}
 		return list;
 	}

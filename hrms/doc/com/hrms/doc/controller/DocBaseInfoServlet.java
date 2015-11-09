@@ -240,6 +240,10 @@ public class DocBaseInfoServlet extends HttpServlet {
 			request.setAttribute("success", "更新成功");
 			request.getRequestDispatcher("/WEB-INF/doc/success.jsp").forward(request, response);
 			
+		}else if(item.equals("export")){
+			String exportToExcel = request.getParameter("exportToExcel");
+			request.setAttribute("exportToExcel", exportToExcel);
+			request.getRequestDispatcher("/WEB-INF/doc/baseInfoView.jsp").forward(request, response);
 		}
 	}
 

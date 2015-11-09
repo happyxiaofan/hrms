@@ -316,4 +316,42 @@ public class UserManager {
 		
 		return pc;
 	}
+	
+public void addEngageRecord(EngageRecordEmp eremp){
+		
+		try {
+			conn.setAutoCommit(false);
+			sql = "insert into t_engage_record values('" + eremp.getRecordno()
+					+ "','" + eremp.getEmp_id() + "','" + eremp.getEmp_name()
+					+ "','" + eremp.getEmp_post() + "',to_date('"
+					+ eremp.getEmp_date() + "','yyyy-mm-dd'))";
+			stmt = conn.prepareStatement(sql);
+			stmt.executeQuery();
+			conn.commit();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+public void updateEngageRecord(EngageRecordEmp eremp) {
+	try {
+		conn.setAutoCommit(false);
+		String sql = "update t_engage_record set emp_id='" 
+				+eremp.getEmp_id()+ "',emp_name='" 
+				+eremp.getEmp_post()+ "',emp_date=to_date('"
+				+ eremp.getEmp_date() + "','yyyy-mm-dd hh24:mi:ss') where recordno='" 
+				+eremp.getRecordno()+ "'";
+		stmt = conn.prepareStatement(sql);
+		System.out.println(sql);
+		stmt.executeUpdate();
+		conn.commit();
+		
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	
+}
 }

@@ -32,14 +32,15 @@ public class ListpChange extends HttpServlet {
 		/*DepartmentManager manager = new DepartmentManager();
 		List<Department> depts = manager.queryAllDepts();*/
 		String item = request.getParameter("item");
-		if(item.equals("edit")){
+		if(item.equals("add")){
+			//addpChange.jsp
+			request.getRequestDispatcher("/WEB-INF/pa/addpChange.jsp").forward(request, response);
+		}else if(item.equals("edit")){
 			UserManager um =new UserManager();
 			List<pChange> pcs = um.queryAllpChanges();
 			//添加到Session
 			request.setAttribute("pcs", pcs);
 			request.getRequestDispatcher("/WEB-INF/pa/listpChange.jsp").forward(request, response);
-		}else if(item.equals("add")){
-			request.getRequestDispatcher("/WEB-INF/pa/addpChange.jsp").forward(request, response);
 		}
 	}
 
