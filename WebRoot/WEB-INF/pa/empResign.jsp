@@ -98,7 +98,7 @@ body {
 								<input type="checkbox" name="checkbox1" id="checkbox1" />
 							</div></td>
                             
-                        <td width="" height="20" bgcolor="d3eaef" class="STYLE6"><div
+                        <td width="" height="20" bgcolor="#FFFFFF" class="STYLE6"><div
 								align="center"><%=resignEmp.getResignno() %></div></td>
 						<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=resignEmp.getEmp_id() %></div></td>

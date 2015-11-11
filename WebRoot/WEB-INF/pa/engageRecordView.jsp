@@ -55,30 +55,27 @@ body {
 		cellspacing="0">
 		<tr>
 			<td>
-			<table width="80%" border="0" cellpadding="0" align="center" style="margin-top:30px"
-					cellspacing="1" bgcolor="#a8c7ce">
-              
+				<table width="80%" border="0" cellpadding="0" align="center"
+					style="margin-top:30px" cellspacing="1" bgcolor="#a8c7ce">
+
 					<tr>
-                    	<td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div
+						<td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div
 								align="center">
 								<input type="checkbox" name="checkbox" id="checkbox" />
 							</div></td>
 						<!-- 员工编号 -->
-                        <td width="" bgcolor="d3eaef" class="STYLE6"><div
+						<td width="" bgcolor="d3eaef" class="STYLE6"><div
 								align="center">编号</div></td>
-						<td width=""  bgcolor="d3eaef" class="STYLE6"><div
+						<td width="" bgcolor="d3eaef" class="STYLE6"><div
 								align="center">员工ID</div></td>
-						<td width=""  bgcolor="d3eaef" class="STYLE6"><div
+						<td width="" bgcolor="d3eaef" class="STYLE6"><div
 								align="center">姓名</div></td>
 						<td width="" bgcolor="d3eaef" class="STYLE6"><div
 								align="center">职位</div></td>
-                        <td width="" bgcolor="d3eaef" class="STYLE6">
-							<div align="center">聘任时间</div></td>
-                        <td width=""  bgcolor="d3eaef" class="STYLE6"><div
-								align="center">基本操作</div></td>
-					</tr>
-				<%
-				List<EngageRecordEmp> eremps = (List<EngageRecordEmp>)request.getAttribute("eremps");
+						<td width="" bgcolor="d3eaef" class="STYLE6">
+							<div align="center">聘任时间</div>
+						</td> </tr> <% List
+						<EngageRecordEmp> eremps = (List<EngageRecordEmp>)request.getAttribute("eremps");
 				if(eremps != null && eremps.size()>0){
 					for(int i = 0;i<eremps.size();i++){
 						EngageRecordEmp eremp = eremps.get(i);
@@ -89,9 +86,8 @@ body {
                     	<td height="30" bgcolor="#FFFFFF"><div align="center">
 								<input type="checkbox" name="checkbox1" id="checkbox1" />
 							</div></td>
-                            
-                        <td class="STYLE6" bgcolor="#FFFFFF"><div
-								align="center"><%=eremp.getRecordno() %></div></td>
+                          <td class="STYLE6" bgcolor="#FFFFFF"><div
+								align="center"><%=eremp.getRecordno() %></div></td>   
 						<td bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=eremp.getEmp_id() %></div></td>
 						<td  bgcolor="#FFFFFF" class="STYLE19"><div
@@ -100,13 +96,6 @@ body {
 								align="center"><%=eremp.getEmp_post() %></div></td>
                         <td bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=new String(eremp.getEmp_date().substring(0,10)) %></div></td>
-						<td bgcolor="#FFFFFF" class="STYLE19">
-							<div align="center">
-								<span class="STYLE19"><a href="${pageContext.request.contextPath}/deleteEgageRcord?emp_id=<%=eremp.getEmp_id() %>">删除 </a>| 
-								<a
-									href="${pageContext.request.contextPath}/addEngageRecord?item=view&recordno=<%=eremp.getRecordno() %>&emp_id=<%=eremp.getEmp_id() %>&emp_name=<%=eremp.getEmp_name() %>&emp_post=<%=eremp.getEmp_post() %>&emp_date=<%=eremp.getEmp_date() %>">修改</a></span>
-							</div>
-						</td>
 					</tr>		
 			<%
 					}
@@ -115,7 +104,7 @@ body {
 			</table>
 			</td>
 		</tr>
-		</table>
-	</body>
+	</table>
+</body>
 </html>
 

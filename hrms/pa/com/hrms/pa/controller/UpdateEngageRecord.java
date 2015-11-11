@@ -51,7 +51,7 @@ public class UpdateEngageRecord extends HttpServlet {
 		List<EngageRecordEmp> eremps = userManager.queryEngageRecordEmps();
 	
 			request.setAttribute("eremps", eremps);
-			request.getRequestDispatcher("/WEB-INF/pa/engageRecord.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/pa/engageRecordView.jsp").forward(request, response);
 		
 		
 		

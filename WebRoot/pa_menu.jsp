@@ -91,6 +91,9 @@ body {
         <li>
 	        <a href="${pageContext.request.contextPath}/engageRecord?item=edit" target="rightFrame">编辑聘任信息</a>
         </li>
+        <li>
+	        <a href="${pageContext.request.contextPath}/engageRecord?item=view" target="rightFrame">查看聘任信息</a>
+        </li>
       </ul>
     </li>
     <li> <a class="head">人事信息查看</a>

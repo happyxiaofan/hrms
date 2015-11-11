@@ -132,7 +132,7 @@ body {
 								<span class="STYLE19"><a
 									href="${pageContext.request.contextPath}/deleteDept?dept_id=<%=dept.getDept_id() %>">删除
 								</a> | <a
-									href="${pageContext.request.contextPath}/addDept?item=view&dept_id=<%=dept.getDept_id() %>&dept_name=<%=dept.getDept_name() %>&dept_num=<%=dept.getDept_num() %>&status=<%=dept.getStatus() %>">查看</a></span>
+									href="${pageContext.request.contextPath}/addDept?item=view&dept_id=<%=dept.getDept_id() %>&dept_name=<%=dept.getDept_name() %>&dept_num=<%=dept.getDept_num() %>&status=<%=dept.getStatus() %>">更新</a></span>
 							</div></td>
 					</tr>
 					<%		} 

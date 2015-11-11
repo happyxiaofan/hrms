@@ -17,6 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+	<script type="text/javascript" src="res/js/DatePicker/WdatePicker.js"></script>
 	<style type="text/css">
 form{ margin:0 auto; width:400px;}
 input{margin-top:10px;
@@ -30,7 +31,7 @@ font-size:18px;}
     		pChange pc = (pChange)request.getAttribute("pc");
     		String pchange_id = pc.getPchange_id();
     		String pchange_name = new String(pc.getPchange_name().getBytes("ISO-8859-1"),"utf-8");
-    		String pchange_time= pc.getPchange_time();
+    		String pchange_time= new String(pc.getPchange_time().substring(0,10));
     		String pchange_pstate= pc.getPchange_pstate();
     		String pchange_astate = pc.getPchange_astate();
     		String pchange_class =pc.getPchange_class();
@@ -50,7 +51,10 @@ font-size:18px;}
 			</tr>
 			<tr>
 				<td>调配时间：</td>
-				<td><input type="text" name="pchange_time" value="<%=pchange_time%>"/></td>
+				<td><input id="pChange_time" name="pchange_time" type="text" value="<%=pchange_time%>"/>
+					<img onclick="WdatePicker({el:'pChange_time'})"
+					src="res/js/DatePicker/skin/datePicker.gif" width="16" height="22"
+					align="absmiddle"></td>
 			</tr>
 			<tr>
 				<td>变动前状态： </td>

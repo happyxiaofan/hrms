@@ -134,7 +134,7 @@ body {
 						<td bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=pc.getPchange_name() %></div></td>
 						<td bgcolor="#FFFFFF" class="STYLE19"><div
-								align="center"><%=pc.getPchange_time() %></div></td>
+								align="center"><%=new String(pc.getPchange_time().substring(0,10)) %></div></td>
 						<td  bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=pc.getPchange_pstate()%></div></td>
 						<td  bgcolor="#FFFFFF" class="STYLE19"><div

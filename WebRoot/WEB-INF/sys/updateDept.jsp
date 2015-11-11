@@ -21,7 +21,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
   </head>
   
   <body>
@@ -33,12 +32,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		int status = department.getStatus();
     	 %>
     	 <form action="${pageContext.request.contextPath}/updateDept" method="post">
-		部门编号：<input type="text" name="dept_id" value="<%=dept_id %>"/><br />
-		部门名称：<input type="text" name="dept_name" value="<%=dept_name %>"/><br />
-		人数：<input type="text" name="dept_num" value="<%=dept_num %>"/><br />
-		状态：<input type="text" name="status" value="<%=status %>"/><br />
-		<input type="submit" value="更新"/>
-		<input type="reset" />
+    	 <table border="1px" cellspacing="0px" height="200px" width="60%" align="center">
+    	 <tr>
+			<td bgcolor="#a8c7ce" width="20%">部门编号：</td>
+			<td><input type="text" name="dept_id" value="<%=dept_id %>"/></td>
+		</tr>
+		<tr>
+			<td  bgcolor="#a8c7ce">部门名称：</td>
+			<td><input type="text" name="dept_name" value="<%=dept_name %>"/></td>
+		</tr>
+		<tr>
+			<td  bgcolor="#a8c7ce">人数：</td>
+			<td><input type="text" name="dept_num" value="<%=dept_num %>"/></td>
+		</tr>
+		<tr>
+			<td  bgcolor="#a8c7ce">状态：</td>
+			<td><input type="text" name="status" value="<%=status %>"/></td>
+		</tr>
+		<tr>
+			<td colspan="2" >
+				<div style="margin-left:150px">
+				<input type="submit" value="更新"/>
+				<input type="reset" />
+				</div>
+			</td>
+		</tr>
+		</table>
 	</form>
   </body>
 </html>

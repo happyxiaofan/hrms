@@ -30,6 +30,11 @@ public class EngageRecord extends HttpServlet {
 			request.getRequestDispatcher("/WEB-INF/pa/engageRecord.jsp").forward(request, response);
 		}else if(item.equals("add")){
 			request.getRequestDispatcher("/WEB-INF/pa/addEngageRecord.jsp").forward(request, response);
+		}else if(item.equals("view")){
+			UserManager uManager = new UserManager();
+			List<EngageRecordEmp> eremps = uManager.queryEngageRecordEmps();
+			request.setAttribute("eremps", eremps);
+			request.getRequestDispatcher("/WEB-INF/pa/engageRecordView.jsp").forward(request, response);
 		}
 	}
 

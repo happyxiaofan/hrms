@@ -83,20 +83,20 @@ body {
 		      <li> <a class="head">机构信息维护</a>
 		      <ul>
 		        <li><a href="${pageContext.request.contextPath}/addDept?item=query" target="rightFrame">添加部门</a></li>
-		        <li><a href="${pageContext.request.contextPath}/listDept" target="rightFrame">查看/修改部门</a></li>
+		        <li><a href="${pageContext.request.contextPath}/listDept" target="rightFrame">删除/修改部门</a></li>
 		        
 		      </ul>
 		    </li>
 		    <li> <a class="head">用户管理</a>
 		      <ul>
 		        <li><a href="${pageContext.request.contextPath}/addEmp?item=query" target="rightFrame">添加新雇员</a></li>
-		        <li><a href="${pageContext.request.contextPath}/listEmp" target="rightFrame">查看/修该雇员信息</a></li>
+		        <li><a href="${pageContext.request.contextPath}/listEmp" target="rightFrame">删除/修该雇员信息</a></li>
 		      </ul>
 		    </li>
 		    <li> <a class="head">角色管理</a>
 		      <ul>
 		        <li><a href="${pageContext.request.contextPath}/roleServlet?item=add" target="rightFrame">添加角色</a></li>
-		        <li><a href="${pageContext.request.contextPath}/roleServlet?item=query" target="rightFrame">查看/修改角色</a></li>
+		        <li><a href="${pageContext.request.contextPath}/roleServlet?item=query" target="rightFrame">删除/修改角色</a></li>
 		      </ul>
 		    </li>
 		    <li> <a class="head">模块管理</a>

@@ -118,7 +118,7 @@ body {
 								align="center"><%=module.getM_id()%></div></td>
 						<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=module.getM_name()%></div></td>
-						<td width="12%" height="20" bgcolor="d3eaef" class="STYLE6"><div
+						<td width="12%" height="20" bgcolor="#FFFFFF" class="STYLE6"><div
 								align="center"><%=module.getModule_role_name()%></div></td>
 					</tr>
 					<%		} 
