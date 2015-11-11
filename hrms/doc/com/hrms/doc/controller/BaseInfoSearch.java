@@ -72,6 +72,14 @@ public class BaseInfoSearch extends HttpServlet {
 				request.setAttribute("in", "no");
 				request.getRequestDispatcher("/WEB-INF/doc/baseInfoSearch.jsp").forward(request, response);
 			}
+		}else if(item.equals("soso")){
+			request.getRequestDispatcher("/WEB-INF/doc/searchInfo.jsp").forward(request, response);
+		}else if(item.equals("so")){
+			String str = request.getParameter("str");
+			String key = request.getParameter("key");
+			List<BaseInfo> infos = manager.searchInfoByKey(str, key);
+			request.setAttribute("infos", infos);
+			request.getRequestDispatcher("/WEB-INF/doc/searchInfo.jsp").forward(request, response);
 		}
 	}
 

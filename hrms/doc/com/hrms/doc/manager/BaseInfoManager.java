@@ -158,4 +158,30 @@ public class BaseInfoManager {
 		}
 		return infos;
 	}
+
+
+	public List<BaseInfo> searchInfoByKey(String str, String key) {
+		List<BaseInfo> infos = new ArrayList<BaseInfo>();
+		ResultSet rs = null;
+		try {
+			stmt = conn.prepareStatement("select e_name,gender,edu,degree,status from t_doc_baseinfo where "+str+" like '%" + key + "%'");
+			rs = stmt.executeQuery();
+			BaseInfo info = null;
+			while (rs.next()) {
+				info = new BaseInfo();
+				info.setE_name(rs.getString("e_name"));
+				info.setGender(rs.getString("gender"));
+				info.setEducation(rs.getString("edu"));
+				info.setDegree(rs.getString("degree"));
+				info.setStatus(rs.getString("status"));
+
+				infos.add(info);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtils.release(rs, stmt, null);
+		}
+		return infos;
+	}
 }

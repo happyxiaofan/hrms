@@ -110,7 +110,8 @@ body {
     </li>
     <li> <a class="head">查询系统</a>
       <ul>
-        <li><a href="${pageContext.request.contextPath }/baseInfoSearch?item=enter" target="rightFrame">人员基本信息查询</a></li>
+        <li><a href="${pageContext.request.contextPath }/baseInfoSearch?item=enter" target="rightFrame">普通查询</a></li>
+        <li><a href="${pageContext.request.contextPath }/baseInfoSearch?item=soso" target="rightFrame">条件查询</a></li>
       </ul>
     </li>
   </ul>

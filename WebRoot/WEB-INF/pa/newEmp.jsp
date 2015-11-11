@@ -58,15 +58,15 @@ body {
 </head>
 
 <body>
-	<table width="100%" border="0" align="center" cellpadding="0"
+	<table width="100%" border="0" align="center" cellpadding="0" style="margin-top:30px"
 		cellspacing="0">
 		<tr>
 			<td>
-			<table width="100%" border="0" cellpadding="0"
+			<table width="80%" border="0" cellpadding="0" align="center"
 					cellspacing="1" bgcolor="#a8c7ce">
               
 					<tr>
-                    <td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
+                    <td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div
 								align="center">
 								<input type="checkbox" name="checkbox" id="checkbox" />
 							</div></td>
@@ -100,7 +100,7 @@ body {
 					
 			 %>
 					<tr>
-                    	<td height="20" bgcolor="#FFFFFF"><div align="center">
+                    	<td height="30" bgcolor="#FFFFFF"><div align="center">
 								<input type="checkbox" name="checkbox1" id="checkbox1" />
 							</div></td>
 						<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div

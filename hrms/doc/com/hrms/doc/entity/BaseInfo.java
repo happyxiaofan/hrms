@@ -2,6 +2,7 @@ package com.hrms.doc.entity;
 
 public class BaseInfo {
 
+	private String e_id;
 	private String e_name;
 	
 	private String gender;
@@ -18,6 +19,16 @@ public class BaseInfo {
 	
 	private String status;
 	
+	private String passwd;
+	
+	public String getPasswd() {
+		return passwd;
+	}
+
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
+	}
+
 	public String getStatus() {
 		return status;
 	}
@@ -92,4 +103,13 @@ public class BaseInfo {
 		this.title = title;
 	}
 
+	public String getE_id() {
+		return e_id;
+	}
+
+	public void setE_id(String e_id) {
+		this.e_id = e_id;
+	}
+
+	
 }

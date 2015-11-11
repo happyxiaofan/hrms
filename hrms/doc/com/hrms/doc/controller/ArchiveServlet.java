@@ -84,7 +84,7 @@ public class ArchiveServlet extends HttpServlet {
 		}else if(item.equals("view")){
 			
 			int pagenum = 1;
-			int pagesize = 15;
+			int pagesize = 10;
 			
 			if(request.getParameter("pagenum")!=null) {
 				pagenum = Integer.parseInt(request.getParameter("pagenum"));

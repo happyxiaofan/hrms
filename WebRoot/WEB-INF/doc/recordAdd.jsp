@@ -25,10 +25,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  	<div style="width:60%;margin-left:200px;margin-top:20px" align="center" >
     <form action="${pageContext.request.contextPath }/RecordActionServlet?method=addRecord&entity=record" method="post">
-    	<table>
+    	<table border="1px" cellspacing="0px" width="100%" >
     		<tr>
-    			<td>部门</td>
+    			<td height="30px" bgcolor="#a8c7ce">部门</td>
     			<td>
     				<select name="dept">
     					<option>请选择部门</option>
@@ -39,11 +40,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			</td>
     		</tr>
     		<tr>
-    			<td>职位</td>
+    			<td height="30px" bgcolor="#a8c7ce">职位</td>
     			<td><input type="text" name="job"></td>
     		</tr>
     		<tr>
-    			<td>学历</td>
+    			<td height="30px" bgcolor="#a8c7ce">学历</td>
     			<td>
     				<select name="edu">
     					<option selected="selected">本科
@@ -53,28 +54,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			</td>
     		</tr>
     		<tr>
-    			<td>工作内容</td>
+    			<td height="30px" bgcolor="#a8c7ce">工作内容</td>
     			<td><input type="text" name="work"></td>
     		</tr>
     		<tr>
-    			<td>开始时间</td>
+    			<td height="30px" bgcolor="#a8c7ce">开始时间</td>
     			<td><input id="start_time" name="start_time" type="text" />
     			<img onclick="WdatePicker({el:'start_time'})" src="res/js/DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle">
     			</td>
     		</tr>
     		<tr>
-    			<td>结束时间</td>
+    			<td height="30px" bgcolor="#a8c7ce">结束时间</td>
     			<td>
     			<input id="end_time" name="end_time" type="text" />
     			<img onclick="WdatePicker({el:'end_time'})" src="res/js/DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle">
     			</td>
     		</tr>
     		<tr>
-    			<td colspan="2">
+    			<td colspan="2" height="30px" align="center">
     				<input type="submit" value="添加履历">
     			</td>
     		</tr>
     	</table>
     </form>
+    </div>
   </body>
 </html>

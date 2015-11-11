@@ -64,6 +64,7 @@ body {
 	font-size: 12px;
 	color: #295568;
 }
+a{text-decoration: none;}
 </style>
 <script type="text/javascript">
 		
@@ -107,11 +108,11 @@ body {
 			
 			<tr>
 				<td>
-				<table width="100%" border="0" cellpadding="0"
+				<table width="80%" border="0" cellpadding="0" style="margin-top:30px" align="center"
 						cellspacing="1" bgcolor="#a8c7ce">
 						
 						<tr>
-							<td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
+							<td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div
 									align="center">
 									<input type="checkbox" name="checkbox" id="checkbox" />
 								</div></td>
@@ -122,18 +123,18 @@ body {
 									align="center">人员ID</div></td>
 							<td width="8%" height="20" bgcolor="d3eaef" class="STYLE6"><div
 									align="center">档案编号</div></td>
-							<td width="50px" height="20" bgcolor="d3eaef" class="STYLE6"><div
+							<td width="20%" height="20" bgcolor="d3eaef" class="STYLE6"><div
 									align="center">档案名称</div></td>
-							<td width="16%" height="20" bgcolor="d3eaef" class="STYLE6"><div
+							<td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div
 									align="center">档案摘要</div></td>
-							<td width="5%" height="20" bgcolor="d3eaef" class="STYLE6">
+							<td width="20%" height="20" bgcolor="d3eaef" class="STYLE6">
 								<div align="center">备注</div>
 							</td>
 							
 						</tr>
 						<c:forEach items="${archives}" var="archive">
 			   				<tr>
-			   					<td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
+			   					<td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div
 									align="center">
 									<input type="checkbox" name="checkbox" id="checkbox" />
 								</div></td>
@@ -153,7 +154,7 @@ body {
 			   			</c:forEach>
 						<!-- 分页 -->
 						<tr>
-			   				<td colspan="6" align="center">
+			   				<td colspan="9" align="center" height="30px">
 			   					共有${page.recordcount}条记录&nbsp;
 			   					每页显示<input type="text" id="pagesize" value="${page.pagesize }" size="2" onblur="forward1()"/>条记录&nbsp;
 			   					共有${page.pagecount }页
@@ -184,6 +185,7 @@ body {
 					</table>
    </table>
    </form>
+   <div style="margin-right:150px;float:right">
    <%
         if (exportToExcel == null) {
     %>
@@ -191,5 +193,6 @@ body {
     <%
         }
     %>
+    </div>
   </body>
 </html>

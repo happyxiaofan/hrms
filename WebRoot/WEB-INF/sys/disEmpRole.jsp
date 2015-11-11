@@ -52,10 +52,10 @@
 		<table width="100%" border="0" align="center" cellpadding="0"
 			cellspacing="0">
 			<tr>
-				<td><table width="100%" border="0" cellpadding="0"
+				<td><table width="80%" border="0" cellpadding="0" align="center"
 						cellspacing="1" bgcolor="#a8c7ce">
 						<tr>
-							<td width="1%" height="20" bgcolor="d3eaef" class="STYLE10"><div
+							<td width="1%" height="30" bgcolor="d3eaef" class="STYLE10"><div
 									align="center">
 									<input type="checkbox" name="checkbox" id="checkbox" />
 								</div></td>
@@ -109,7 +109,7 @@
 						
 						<c:forEach items="${pList}" var="p">
 			   				<tr>
-			   					<td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
+			   					<td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div
 									align="center">
 									<input type="checkbox" name="checkbox" id="checkbox" />
 								</div></td>

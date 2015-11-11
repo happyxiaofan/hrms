@@ -199,9 +199,7 @@ public class DocBaseInfoServlet extends HttpServlet {
 			request.getSession().setAttribute("infos", infos);
 			request.getSession().setAttribute("page", page);
 			request.getRequestDispatcher("/WEB-INF/doc/baseInfoEdit.jsp").forward(request, response);
-		}
-		
-		else if(item.equals("edit2")){
+		}else if(item.equals("edit2")){
 			String e_name = request.getParameter("e_name");
 			String gender = request.getParameter("gender");
 			String edu = request.getParameter("edu");
@@ -244,6 +242,8 @@ public class DocBaseInfoServlet extends HttpServlet {
 			String exportToExcel = request.getParameter("exportToExcel");
 			request.setAttribute("exportToExcel", exportToExcel);
 			request.getRequestDispatcher("/WEB-INF/doc/baseInfoView.jsp").forward(request, response);
+		}else if(item.equals("userInfo")){
+			request.getRequestDispatcher("/WEB-INF/doc/previewBaseInfo.jsp").forward(request, response);
 		}
 	}
 

@@ -22,6 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 <style type="text/css">
+a{text-decoration: none;}
 body {
 	margin-left: 3px;
 	margin-top: 0px;
@@ -58,7 +59,9 @@ body {
 	font-size: 12px;
 	color: #295568;
 }
+
 </style>
+
 <script type="text/javascript">
 		
 		function forward1() {
@@ -100,10 +103,10 @@ body {
 			cellspacing="0">
 			<tr>
 				<td>
-				<table width="100%" border="0" cellpadding="0"
+				<table width="80%" border="0" cellpadding="0" align="center" style="margin-top:30px"
 						cellspacing="1" bgcolor="#a8c7ce">
 						<tr>
-							<td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
+							<td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div
 									align="center">
 									<input type="checkbox" name="checkbox" id="checkbox" />
 								</div></td>
@@ -114,14 +117,14 @@ body {
 									align="center">性别</div></td>
 							<td width="8%" height="20" bgcolor="d3eaef" class="STYLE6"><div
 									align="center">学历</div></td>
-							<td width="50px" height="20" bgcolor="d3eaef" class="STYLE6"><div
+							<td width="20%" height="20" bgcolor="d3eaef" class="STYLE6"><div
 									align="center">学位</div></td>
 							<td width="16%" height="20" bgcolor="d3eaef" class="STYLE6"><div
 									align="center">所在部门</div></td>
-							<td width="5%" height="20" bgcolor="d3eaef" class="STYLE6">
+							<td width="10%" height="20" bgcolor="d3eaef" class="STYLE6">
 								<div align="center">职位</div>
 							</td>
-							<td width="20%" height="20" bgcolor="d3eaef" class="STYLE6">
+							<td width="10%" height="20" bgcolor="d3eaef" class="STYLE6">
 								<div align="center">照片</div>
 							</td>
 							<td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div
@@ -131,7 +134,7 @@ body {
 						</tr>
 						<c:forEach items="${infos}" var="info">
 			   				<tr>
-			   					<td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
+			   					<td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div
 									align="center">
 									<input type="checkbox" name="checkbox" id="checkbox" />
 								</div></td>
@@ -156,7 +159,7 @@ body {
 			   			</c:forEach>
 						<!-- 分页 -->
 						<tr>
-			   				<td colspan="6" align="center">
+			   				<td colspan="9" align="center" height="30px">
 			   					共有${page.recordcount}条记录&nbsp;
 			   					每页显示<input type="text" id="pagesize" value="${page.pagesize }" size="2" onblur="forward1()"/>条记录&nbsp;
 			   					共有${page.pagecount }页
@@ -187,6 +190,7 @@ body {
 					</table>
    </table>
    </form>
+   	<div style="float:right;margin-right:150px">
    <%
         if (exportToExcel == null) {
     %>
@@ -194,5 +198,6 @@ body {
     <%
         }
     %>
+    </div>
   </body>
 </html>

@@ -55,26 +55,26 @@ body {
 		cellspacing="0">
 		<tr>
 			<td>
-			<table width="100%" border="0" cellpadding="0"
+			<table width="80%" border="0" cellpadding="0" align="center" style="margin-top:30px"
 					cellspacing="1" bgcolor="#a8c7ce">
               
 					<tr>
-                    	<td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
+                    	<td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div
 								align="center">
 								<input type="checkbox" name="checkbox" id="checkbox" />
 							</div></td>
 						<!-- 员工编号 -->
-                        <td width="" height="20" bgcolor="d3eaef" class="STYLE6"><div
+                        <td width="" bgcolor="d3eaef" class="STYLE6"><div
 								align="center">编号</div></td>
-						<td width="" height="20" bgcolor="d3eaef" class="STYLE6"><div
+						<td width=""  bgcolor="d3eaef" class="STYLE6"><div
 								align="center">员工ID</div></td>
-						<td width="" height="20" bgcolor="d3eaef" class="STYLE6"><div
+						<td width=""  bgcolor="d3eaef" class="STYLE6"><div
 								align="center">姓名</div></td>
-						<td width="" height="20" bgcolor="d3eaef" class="STYLE6"><div
+						<td width="" bgcolor="d3eaef" class="STYLE6"><div
 								align="center">职位</div></td>
-                        <td width="" height="20" bgcolor="d3eaef" class="STYLE6">
+                        <td width="" bgcolor="d3eaef" class="STYLE6">
 							<div align="center">聘任时间</div></td>
-                        <td width="" height="20" bgcolor="d3eaef" class="STYLE6"><div
+                        <td width=""  bgcolor="d3eaef" class="STYLE6"><div
 								align="center">基本操作</div></td>
 					</tr>
 				<%
@@ -86,21 +86,21 @@ body {
 				 %>
 			
 					<tr>
-                    	<td height="20" bgcolor="#FFFFFF"><div align="center">
+                    	<td height="30" bgcolor="#FFFFFF"><div align="center">
 								<input type="checkbox" name="checkbox1" id="checkbox1" />
 							</div></td>
                             
-                        <td width="" height="20" bgcolor="d3eaef" class="STYLE6"><div
+                        <td width="" bgcolor="d3eaef" class="STYLE6"><div
 								align="center"><%=eremp.getRecordno() %></div></td>
-						<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
+						<td bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=eremp.getEmp_id() %></div></td>
-						<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
+						<td  bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=eremp.getEmp_name() %></div></td>
-                        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
+                        <td bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=eremp.getEmp_post() %></div></td>
-                        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
+                        <td bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=eremp.getEmp_date() %></div></td>
-						<td height="20" bgcolor="#FFFFFF">
+						<td bgcolor="#FFFFFF">
 							<div align="center">
 								<span class="STYLE19"><a href="${pageContext.request.contextPath}/deleteEgageRcord?emp_id=<%=eremp.getEmp_id() %>">删除 </a>| 
 								<a

@@ -5,56 +5,166 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
-<html>
-	<head>
-		<base href="<%=basePath%>">
-		
-		<title>人力资源管理系统</title>
-		<link rel="stylesheet" type="text/css" href="res/css/style.css" />
-		<script type="text/javascript" src="res/js/js.js"></script>
-	</head>
-	<body>
-		<div id="top">
-		</div>
-		<form id="login" name="login" action="${pageContext.request.contextPath}/login" method="post">
-			<div id="center">
-				<div id="center_left"></div>
-				<div id="center_middle">
-					<div class="user">
-						<label>
-							用户名：
-							<input type="text" name="userName" id="user" />
-						</label>
-					</div>
-					<div class="user">
-						<label>
-							密 码：
-							<input type="password" name="passwd" id="pwd" />
-						</label>
-					</div>
-					<div class="chknumber">
-						<label>
-							验证码：
-							<input name="chknumber" type="text" id="chknumber" maxlength="4"
-								class="chknumber_input" />
-						</label>
-						<img src="res/images/checkcode.png" id="safecode" />
-					</div>
-				</div>
-				<div id="center_middle_right"></div>
-				<div id="center_submit">
-					<div class="button">
-						<img src="res/images/dl.gif" width="57" height="20"
-							onclick="form_submit()">
-					</div>
-					<div class="button">
-						<img src="res/images/cz.gif" width="57" height="20"
-							onclick="form_reset()">
-					</div>
-				</div>
-				<div id="center_right"></div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+<title>Bootstrap响应式登录界面模板</title>
+
+<link rel="stylesheet" type="text/css" href="res/css/bootstrap.min.css" />
+
+<style type="text/css">
+			
+html,body {
+	height: 100%;
+}
+.box {
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0586AD', endColorstr='#0586AD'); /*  IE */
+	background-image:linear-gradient(bottom, #0586AD 0%, #0586AD 100%);
+	background-image:-o-linear-gradient(bottom, #0586AD 0%, #0586AD 100%);
+	background-image:-moz-linear-gradient(bottom, #0586AD 0%, #0586AD 100%);
+	background-image:-webkit-linear-gradient(bottom, #0586AD 0%, #0586AD 100%);
+	background-image:-ms-linear-gradient(bottom, #0586AD 0%, #0586AD 100%);
+	
+	margin: 0 auto;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.login-box {
+	width: 100%;
+	max-width:400px;
+	height: 400px;
+	position: absolute;
+	top: 50%;
+
+	margin-top: -200px;
+	/*设置负值，为要定位子盒子的一半高度*/
+	
+}
+@media screen and (min-width:500px){
+	.login-box {
+		left: 50%;
+		/*设置负值，为要定位子盒子的一半宽度*/
+		margin-left: -200px;
+	}
+}	
+
+.form {
+	width: 100%;
+	max-width:400px;
+	height: 275px;
+	margin: 25px auto 0px auto;
+	padding-top: 25px;
+}	
+.login-content {
+	height: 300px;
+	width: 100%;
+	max-width:500px;
+	background-color: rgba(255, 250, 2550, .6);
+	float: left;
+}		
+	
+	
+.input-group {
+	margin: 0px 0px 30px 0px !important;
+}
+.form-control,
+.input-group {
+	height: 40px;
+}
+
+.form-group {
+	margin-bottom: 0px !important;
+}
+.login-title {
+	padding: 20px 10px;
+	background-color: rgba(0, 0, 0, .6);
+}
+.login-title h1 {
+	margin-top: 10px !important;
+}
+.login-title small {
+	color: #fff;
+}
+
+.link p {
+	line-height: 20px;
+	margin-top: 30px;
+}
+.btn-sm {
+	padding: 8px 24px !important;
+	font-size: 16px !important;
+}
+.foot{
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0586AD', endColorstr='#0586AD'); /*  IE */
+	background-image:linear-gradient(bottom, #0586AD 0%, #0586AD 100%);
+	background-image:-o-linear-gradient(bottom, #0586AD 0%, #0586AD 100%);
+	background-image:-moz-linear-gradient(bottom, #0586AD 0%, #0586AD 100%);
+	background-image:-webkit-linear-gradient(bottom, #0586AD 0%, #0586AD 100%);
+	background-image:-ms-linear-gradient(bottom, #0586AD 0%, #0586AD 100%);
+	margin-top:30px;
+}
+</style>
+
+</head>
+
+<body>
+<div class="box">
+		<div class="login-box">
+			<div class="login-title text-center">
+				<h1><small>登录</small></h1>
 			</div>
-		</form>
-		<div id="footer"></div>
-	</body>
+			<div class="login-content ">
+			<div class="form">
+			<form id="login" name="login" action="${pageContext.request.contextPath}/login" method="post">
+				<div class="form-group">
+					<div class="col-xs-12  ">
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+							<input type="text" id="user" name="userName" class="form-control" placeholder="用户名"/>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-12  ">
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+							<input type="password" id="pwd" name="passwd" class="form-control" placeholder="密码"/>
+						</div>
+					</div>
+				</div>
+				<div class="form-group form-actions">
+					<div class="col-xs-4 col-xs-offset-4 ">
+						<button type="submit" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-off"></span> 登录</button>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-6 link">
+						<p class="text-center remove-margin"><small></small> <a href="javascript:void(0)" ><small></small></a>
+						</p>
+					</div>
+				</div>
+                <div class="form-group">
+					<div class="col-xs-6 link">
+						<p class="text-center remove-margin"><small>忘记密码？</small> <a href="javascript:void(0)" ><small>找回</small></a>
+						</p>
+					</div>
+				</div>
+			</form>
+			</div>
+			<div style="text-align:center;" class="foot">
+				<p style="font-family:楷体;font-size:30px;color:kaiti">
+					<b>人力资源管理系统欢迎您！</b>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+</body>
+
 </html>

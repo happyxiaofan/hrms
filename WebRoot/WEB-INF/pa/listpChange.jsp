@@ -82,44 +82,36 @@ body {
 														人事变动信息列表</span></td>
 											</tr>
 										</table></td>
-									<td><div align="right">
-											<span class="STYLE1"> <input type="checkbox"
-												name="checkbox11" id="checkbox11" /> 全选 &nbsp;&nbsp;<img
-												src="res/images/add.gif" width="10" height="10" /> 添加
-												&nbsp; <img src="res/images/del.gif" width="10" height="10" />
-												删除 &nbsp;&nbsp;<img src="res/images/edit.gif" width="10"
-												height="10" /> 编辑 &nbsp;
-											</span><span class="STYLE1"> &nbsp;</span>
-										</div></td>
+									
 								</tr>
 							</table></td>
 					</tr>
 				</table></td>
 		</tr>
 		<tr>
-			<td><table width="100%" border="0" cellpadding="0"
-					cellspacing="1" bgcolor="#a8c7ce">
+			<td><table width="80%" border="0" cellpadding="0"
+					cellspacing="1" bgcolor="#a8c7ce" align="center" style="margin-top:30px">
 					<tr>
 						<td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
 								align="center">
 								<input type="checkbox" name="checkbox" id="checkbox" />
 							</div></td>
 						<!-- 员工编号 -->
-						<td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div
+						<td width="5%" height="30" bgcolor="d3eaef" class="STYLE6"><div
 								align="center">人事变动编号</div></td>
-						<td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div
+						<td width="5%" bgcolor="d3eaef" class="STYLE6"><div
 								align="center">员工编号</div></td>
-						<td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div
+						<td width="5%"  bgcolor="d3eaef" class="STYLE6"><div
 								align="center">调配人员</div></td>
-						<td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div
+						<td width="5%"  bgcolor="d3eaef" class="STYLE6"><div
 								align="center">调配时间</div></td>
-						<td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div
+						<td width="5%" bgcolor="d3eaef" class="STYLE6"><div
 								align="center">变动前状态</div></td>
-						<td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div
+						<td width="5%"  bgcolor="d3eaef" class="STYLE6"><div
 								align="center">变动后状态</div></td>
-						<td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div
+						<td width="5%"  bgcolor="d3eaef" class="STYLE6"><div
 								align="center">变动类别</div></td>
-						<td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div
+						<td width="5%"  bgcolor="d3eaef" class="STYLE6"><div
 								align="center">
 								<span class="STYLE10">基本操作</span>
 							</div></td>
@@ -135,35 +127,30 @@ body {
 						<td height="20" bgcolor="#FFFFFF"><div align="center">
 								<input type="checkbox" name="checkbox1" id="checkbox1" />
 							</div></td>
-						<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
+						<td height="30px" bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=pc.getPchange_id()%></div></td>
-						<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
+						<td bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=pc.getPchange_emp_id() %></div></td>
-						<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
+						<td bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=pc.getPchange_name() %></div></td>
-						<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
+						<td bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=pc.getPchange_time() %></div></td>
-						<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
+						<td  bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=pc.getPchange_pstate()%></div></td>
-						<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
+						<td  bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=pc.getPchange_astate()%></div></td>
-						<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
+						<td bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=pc.getPchange_class()%></div></td>
-						 <td height="20" bgcolor="#FFFFFF"><div align="center">
+						 <td  bgcolor="#FFFFFF"><div align="center">
 								<span class="STYLE19"><a
 									href="${pageContext.request.contextPath}/deletepChange?pchange_id=<%=pc.getPchange_id() %>">删除
-								</a> <a href="${pageContext.request.contextPath}/updateInfo?pchange_id=<%=pc.getPchange_id()%>&pchange_name=<%=pc.getPchange_name()%>&pchange_time=<%=pc.getPchange_time()%>&pchange_pstate=<%=pc.getPchange_pstate()%>&pchange_astate=<%=pc.getPchange_astate()%>&pchange_class=<%=pc.getPchange_class()%>&pchange_emp_id=<%=pc.getPchange_emp_id()%>">更新</a>  </span>
+								</a> <a href="${pageContext.request.contextPath}/updateInfo?item=update&pchange_id=<%=pc.getPchange_id()%>&pchange_name=<%=pc.getPchange_name()%>&pchange_time=<%=pc.getPchange_time()%>&pchange_pstate=<%=pc.getPchange_pstate()%>&pchange_astate=<%=pc.getPchange_astate()%>&pchange_class=<%=pc.getPchange_class()%>&pchange_emp_id=<%=pc.getPchange_emp_id()%>">更新</a>  </span>
 							</div></td>
 					</tr>
 					
 					<%		} 
 						}
 					%>
-					<tr>
-						
-						<td align="right"><span><a href="pa/pa_search.jsp">检索</a></span></td>
-					</tr>
-					
 				</table>
 		</table>	
 </body>

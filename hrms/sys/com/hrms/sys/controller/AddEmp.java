@@ -39,7 +39,7 @@ public class AddEmp extends HttpServlet {
 			throws ServletException, IOException {
 
 		String item = request.getParameter("item");
-		
+		UserManager manager = new UserManager();
 		if(item.equals("query")){
 			request.getRequestDispatcher("/WEB-INF/sys/addEmp.jsp").forward(request, response);
 		}else if(item.equals("add")){
@@ -52,7 +52,6 @@ public class AddEmp extends HttpServlet {
 			emp.setEname(e_name);
 			emp.setPwd(passwd);
 			
-			UserManager manager = new UserManager();
 			boolean isExist = manager.isValid(emp);
 			if(!isExist){
 				manager.addEmp(emp);
@@ -72,16 +71,16 @@ public class AddEmp extends HttpServlet {
 			
 			request.setAttribute("emp", emp);
 			request.getRequestDispatcher("/WEB-INF/sys/updateEmp.jsp").forward(request, response);
+		}else if(item.equals("up")){
+			request.getRequestDispatcher("/WEB-INF/sys/updatePwd.jsp").forward(request, response);
+		}else if(item.equals("updatePwd")){
+			String pwd = request.getParameter("passwd1");
+			String e_name = new String(request.getParameter("e_name").getBytes("ISO-8859-1"),"utf-8");
+			
+			manager.updatePwdByName(e_name,pwd);
+			request.setAttribute("success", "修改成功");
+			request.getRequestDispatcher("/WEB-INF/sys/forward.jsp").forward(request, response);
 		}
 	}
-
-	/**
-	 * Initialization of the servlet. <br>
-	 *
-	 * @throws ServletException if an error occurs
-	 */
-	public void init() throws ServletException {
-		// Put your code here
-	}
-
 }
+

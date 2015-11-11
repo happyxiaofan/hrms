@@ -39,33 +39,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		
     	 %>
    			<form action="${pageContext.request.contextPath}/listRewardServlet?item=updateReward" method="post">
-			<table>
+			<table border="1px" width="50%" align="center" style="margin-top:30px" cellspacing="0px">
 				<tr>
-					<td>奖惩人员：<input type="hidden" name="rewid" value="<%= rewid %>" /></td>
-					<td><input type="text" name="rewname" value="<%= rewname %>" /></td>
+					<td height="30px" bgcolor="#a8c7ce" width="20%">奖惩人员：<input type="hidden" name="rewid" value="<%= rewid %>" /></td>
+					<td><div style="margin-left:30px"><input type="text" name="rewname" value="<%= rewname %>" /></div></td>
 				</tr>
 				<tr>
-					<td>奖惩类型：</td>
-					<td><input type="text" name="rewtype" value="<%= rewtype %>" /></td>
+					<td height="30px" bgcolor="#a8c7ce" >奖惩类型：</td>
+					<td> <div style="margin-left:30px"><input type="text" name="rewtype" value="<%= rewtype %>" /></div></td>
 				</tr>
 				<tr>
-					<td>奖惩时间：</td>
-					<td><input type="text" name="rewdate" value="<%= rewdate %>"/></td>
+					<td height="30px" bgcolor="#a8c7ce" >奖惩时间：</td>
+					<td> <div style="margin-left:30px"><input type="text" name="rewdate" value="<%= rewdate %>"/></div></td>
 				</tr>
 				<tr>
-					<td>奖惩标题：</td>
-					<td><input type="text" name="rewcontent" value="<%= rewtitle %>" /></td>
+					<td height="30px" bgcolor="#a8c7ce" >奖惩标题：</td>
+					<td> <div style="margin-left:30px"><input type="text" name="rewtitle" value="<%= rewtitle %>" /></div></td>
 				</tr>
 				<tr>
-					<td>奖惩内容：</td>
-					<td><input type="text" name="rewcontent" value="<%= rewcontent %>" /></td>
+					<td height="30px" bgcolor="#a8c7ce" >奖惩内容：</td>
+					<td><div style="margin-left:30px"><input type="text" name="rewcontent" value="<%= rewcontent %>" /></div></td>
 				</tr>
 				<tr>
-					<td>奖金类别：</td>
-					<td><input type="text" name="rewlevel" value="<%= rewlevel %>" /></td>
+					<td height="30px" bgcolor="#a8c7ce" >奖金类别：</td>
+					<td><div style="margin-left:30px"><input type="text" name="rewlevel" value="<%= rewlevel %>" /></div></td>
 				</tr>
 				<tr>
-				<td colspan="2" align="center"><input type="submit" value="更新" />&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value ="重置"/></td>
+				<td colspan="2"><div style="margin-left:100px"><input type="submit" value="更新" />&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value ="重置"/></div></td>
 				</tr>
 			</table>
 	</form>

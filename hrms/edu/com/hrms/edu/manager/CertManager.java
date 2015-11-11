@@ -28,12 +28,14 @@ private DBAccess db;
 	public void addCert(Cert cert) {
 		try {
 			conn.setAutoCommit(false);
-			stmt = conn.prepareStatement("insert into t_edu_cert(c_id,c_name,c_stu,c_tec,c_time) values('"
+			sql ="insert into t_edu_cert(c_id,c_name,c_stu,c_tec,c_time) values('"
 					+ cert.getcId()+ "','"
 					+ cert.getcName()+ "','"
 					+ cert.getcStu()+ "','"
-					+ cert.getcTec()+ "','"
-					+ cert.getcDate()+ "')");
+					+ cert.getcTec()+ "',to_date('"
+					+ cert.getcDate()+"','yyyy-MM-dd')" + ")";
+			System.out.println(sql);
+			stmt = conn.prepareStatement(sql);
 			stmt.executeUpdate();
 			conn.commit();
 		} catch (SQLException e) {
@@ -87,6 +89,22 @@ private DBAccess db;
 	public void deleteByCertId(int cId){
 		try {
 			stmt = conn.prepareStatement("delete from t_edu_cert where c_id='"+cId+"'");
+			stmt.executeUpdate();
+			conn.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void updateCert(Cert cert){
+		try {
+			String sql="update t_edu_cert set c_name=?,c_stu=?,c_tec=?,c_time=to_date('"+cert.getcDate()+"','yyyy-mm-dd')"+" where c_id=?";
+			stmt=conn.prepareStatement(sql);
+			stmt.setObject(1, cert.getcName());
+			stmt.setObject(2, cert.getcStu());
+			stmt.setObject(3, cert.getcTec());
+			stmt.setObject(4, cert.getcId());
+			
 			stmt.executeUpdate();
 			conn.commit();
 		} catch (SQLException e) {

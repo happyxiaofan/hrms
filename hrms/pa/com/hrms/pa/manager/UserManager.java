@@ -10,6 +10,7 @@ import java.util.List;
 import com.hrms.pa.entity.Employee;
 import com.hrms.pa.entity.EngageRecordEmp;
 import com.hrms.pa.entity.NewEmployee;
+import com.hrms.pa.entity.PaInfo;
 import com.hrms.pa.entity.ResignEmployee;
 import com.hrms.pa.entity.RetireEmployee;
 import com.hrms.pa.entity.pChange;
@@ -88,7 +89,6 @@ public class UserManager {
 				newemps.add(newemp);
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -122,7 +122,6 @@ public class UserManager {
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -154,7 +153,6 @@ public class UserManager {
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -208,7 +206,6 @@ public class UserManager {
 		List<pChange> pcs = new ArrayList<pChange>();
 		ResultSet rs = null;
 		try {
-			/* conn.setAutoCommit(false); */
 			sql = "select * from t_pa_pchange";
 			stmt = conn.prepareStatement(sql);
 			rs = stmt.executeQuery();
@@ -225,7 +222,6 @@ public class UserManager {
 				pcs.add(pc);
 			}
 			/* conn.commit(); */
-			System.out.println(pcs);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -244,7 +240,6 @@ public class UserManager {
 			stmt.executeUpdate();
 			conn.commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -260,12 +255,10 @@ public class UserManager {
 					+ pchange.getPchange_astate() + "','"
 					+ pchange.getPchange_class() + "','"
 					+ pchange.getPchange_emp_id() + "')";
-
 			stmt = conn.prepareStatement(sql);
 			stmt.executeUpdate();
 			conn.commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -283,42 +276,39 @@ public class UserManager {
 					+ pchange.getPchange_class() + "',pchange_emp_id='"
 					+ pchange.getPchange_emp_id() + "'where pchange_id like'"
 					+ pchange.getPchange_id() + "'";
-			System.out.println(sql);
 			stmt = conn.prepareStatement(sql);
 			stmt.executeUpdate();
 			conn.commit();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 	}
-	public pChange queryInfo(String pchange_emp_id) throws SQLException{
+
+	public pChange queryInfo(String pchange_emp_id) throws SQLException {
 		pChange pc = new pChange();
-		
-			sql="select * from t_pa_pchange where pchange_emp_id =?";
-			List<Object> parm = new ArrayList<Object>();
-			parm.add(pchange_emp_id);
-			ResultSet rs = null;
-			
-			rs = DBUtils.query(sql,parm);
-			while(rs.next()){
-				
-				pc.setPchange_id(rs.getString("pchange_id"));
-				pc.setPchange_name(rs.getString("pchange_name"));
-				pc.setPchange_time(rs.getString("pchange_time"));
-				pc.setPchange_pstate(rs.getString("pchange_pstate"));
-				pc.setPchange_astate(rs.getString("pchange_astate"));
-				pc.setPchange_class(rs.getString("pchange_class"));
-				pc.setPchange_emp_id(rs.getString("pchange_emp_id"));
-				
-			}
-		
+		sql = "select * from t_pa_pchange where pchange_emp_id =?";
+		List<Object> parm = new ArrayList<Object>();
+		parm.add(pchange_emp_id);
+		ResultSet rs = null;
+		rs = DBUtils.query(sql, parm);
+		while (rs.next()) {
+
+			pc.setPchange_id(rs.getString("pchange_id"));
+			pc.setPchange_name(rs.getString("pchange_name"));
+			pc.setPchange_time(rs.getString("pchange_time"));
+			pc.setPchange_pstate(rs.getString("pchange_pstate"));
+			pc.setPchange_astate(rs.getString("pchange_astate"));
+			pc.setPchange_class(rs.getString("pchange_class"));
+			pc.setPchange_emp_id(rs.getString("pchange_emp_id"));
+
+		}
+
 		return pc;
 	}
-	
-public void addEngageRecord(EngageRecordEmp eremp){
-		
+
+	public void addEngageRecord(EngageRecordEmp eremp) {
+
 		try {
 			conn.setAutoCommit(false);
 			sql = "insert into t_engage_record values('" + eremp.getRecordno()
@@ -328,30 +318,56 @@ public void addEngageRecord(EngageRecordEmp eremp){
 			stmt = conn.prepareStatement(sql);
 			stmt.executeQuery();
 			conn.commit();
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
-public void updateEngageRecord(EngageRecordEmp eremp) {
-	try {
-		conn.setAutoCommit(false);
-		String sql = "update t_engage_record set emp_id='" 
-				+eremp.getEmp_id()+ "',emp_name='" 
-				+eremp.getEmp_post()+ "',emp_date=to_date('"
-				+ eremp.getEmp_date() + "','yyyy-mm-dd hh24:mi:ss') where recordno='" 
-				+eremp.getRecordno()+ "'";
-		stmt = conn.prepareStatement(sql);
-		System.out.println(sql);
-		stmt.executeUpdate();
-		conn.commit();
-		
-	} catch (SQLException e) {
-		e.printStackTrace();
+	public void updateEngageRecord(EngageRecordEmp eremp) {
+		try {
+			conn.setAutoCommit(false);
+			String sql = "update t_engage_record set emp_id='"
+					+ eremp.getEmp_id() + "',emp_name='" + eremp.getEmp_name()
+					+ "',emp_date=to_date('" + eremp.getEmp_date()
+					+ "','yyyy-mm-dd hh24:mi:ss') where recordno='"
+					+ eremp.getRecordno() + "'";
+			stmt = conn.prepareStatement(sql);
+			stmt.executeUpdate();
+			conn.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 	}
-	
-}
+
+	public List<PaInfo> searchInfoByKey(String str, String key) {
+		List<PaInfo> painfos = new ArrayList<PaInfo>();
+		ResultSet rs = null;
+		try {
+			stmt = conn.prepareStatement("select * from t_pa_info where " + str
+					+ " like '%" + key + "%'");
+			rs = stmt.executeQuery();
+			PaInfo info = null;
+			while (rs.next()) {
+				info = new PaInfo();
+				info.setE_name(rs.getString("e_name"));
+				info.setPost(rs.getString("post"));
+				info.setJob(rs.getString("job"));
+				info.setPchange_time(rs.getString("pchange_time"));
+				info.setPchange_pstate(rs.getString("pchange_pstate"));
+				info.setPchange_astate(rs.getString("pchange_astate"));
+				info.setPchange_reason(rs.getString("pchange_reason"));
+
+				painfos.add(info);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBUtils.release(rs, stmt, null);
+		}
+		return painfos;
+	}
 }

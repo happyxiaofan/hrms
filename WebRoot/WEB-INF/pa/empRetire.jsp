@@ -62,7 +62,7 @@ body {
 		cellspacing="0">
 		<tr>
 			<td>
-			<table width="100%" border="0" cellpadding="0"
+			<table width="80%" border="0" cellpadding="0" align="center" style="margin-top:30px"
 					cellspacing="1" bgcolor="#a8c7ce">
               
 					<tr>
@@ -71,7 +71,7 @@ body {
 								<input type="checkbox" name="checkbox" id="checkbox" />
 							</div></td>
 						<!-- 员工编号 -->
-                        <td width="" height="20" bgcolor="d3eaef" class="STYLE6"><div
+                        <td width="" height="30" bgcolor="d3eaef" class="STYLE6"><div
 								align="center">编号</div></td>
 						<td width="" height="20" bgcolor="d3eaef" class="STYLE6"><div
 								align="center">员工ID</div></td>
@@ -100,12 +100,12 @@ body {
 				 %>
 			
 					<tr>
-                    	<td height="20" bgcolor="#FFFFFF"><div align="center">
+                    	<td height="30" bgcolor="#FFFFFF"><div align="center">
 								<input type="checkbox" name="checkbox1" id="checkbox1" />
 							</div></td>
                             
                         <td width="" height="20" bgcolor="d3eaef" class="STYLE6"><div
-								align="center"><%=remp.getRetireno() %>></div></td>
+								align="center"><%=remp.getRetireno() %></div></td>
 						<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
 								align="center"><%=remp.getEmp_id() %></div></td>
 						<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div

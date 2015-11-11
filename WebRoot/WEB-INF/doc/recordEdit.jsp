@@ -58,6 +58,7 @@ body {
 	font-size: 12px;
 	color: #295568;
 }
+a{text-decoration: none;}
 </style>
 <script type="text/javascript">
 		
@@ -103,10 +104,10 @@ body {
 			cellspacing="0">
 			<tr>
 				<td>
-				<table width="100%" border="0" cellpadding="0"
+				<table width="80%" border="0" cellpadding="0" style="margin-top:30px" align="center"
 						cellspacing="1" bgcolor="#a8c7ce">
 						<tr>
-							<td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
+							<td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div
 									align="center">
 									<input type="checkbox" name="checkbox" id="checkbox" />
 								</div></td>
@@ -132,7 +133,7 @@ body {
 						</tr>
 						<c:forEach items="${records}" var="record">
 			   				<tr>
-			   					<td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
+			   					<td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div
 									align="center">
 									<input type="checkbox" name="checkbox" id="checkbox" />
 								</div></td>
@@ -158,7 +159,7 @@ body {
 			   			</c:forEach>
 						<!-- 分页 -->
 						<tr>
-			   				<td colspan="6" align="center">
+			   				<td colspan="9" align="center" height="30px">
 			   					共有${page.recordcount}条记录&nbsp;
 			   					每页显示<input type="text" id="pagesize" value="${page.pagesize }" size="2" onblur="forward1()"/>条记录&nbsp;
 			   					共有${page.pagecount }页

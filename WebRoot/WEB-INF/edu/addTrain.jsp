@@ -24,22 +24,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   <body>
    	<form action="${pageContext.request.contextPath}/addTrainServlet" method="post">
-   		<table align="center" width="30%" border="1px" >
+   		<table align="center" width="60%" border="1px" cellspacing="0" cellpadding="0" height="200">
    			<tr>
-   				<td id="td">培训ID：</td>
-   				<td><input type="text" size="5" name="treId">*</td>
+   				<td id="td" width="20%" align="center" bgcolor="#d3eaef">培训ID：</td>
+   				<td><input type="text" size="20" name="treId" style="margin-left:30px">*</td>
    			</tr>
    			<tr>
-   				<td class="td">培训项目：</td><td><input type="text" size="12" name="treName">*</td>
+   				<td class="td" align="center" bgcolor="#d3eaef">培训项目：</td>
+   				<td><input type="text" size="20" name="treName" style="margin-left:30px">*</td>
   			</tr>
   			<tr>
-   				<td class="td">培训人数：</td>
-   				<td><input type="text" size="5" name="treNum">*</td>
+   				<td class="td" align="center" bgcolor="#d3eaef">培训人数：</td>
+   				<td><input type="text" size="12" name="treNum" style="margin-left:30px">*</td>
    			</tr>
    			
    			<tr>
-   				<td><input type="submit" value="添加"></td>
-   				<td><input type="reset" value="重置"></td>
+   				<td bgcolor="#d3eaef"></td>
+   				<td><input type="submit" value="添加" style="margin-left:30px;margin-right:30px;"><input type="reset" value="重置"></td>
    			</tr>
  		</table>
    	</form>

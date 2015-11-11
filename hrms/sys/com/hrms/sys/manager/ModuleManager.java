@@ -49,14 +49,14 @@ private DBAccess db;
 		ResultSet rs = null;
 		List<Module> modules = new ArrayList<Module>();
 		try {
-			sql = "select * from t_module";
+			sql = "select m.*,role_name name from t_module m,t_role r where r.role_id=m.role_id";
 			stmt = conn.prepareStatement(sql);
 			rs = stmt.executeQuery();
 			while(rs.next()){
 				Module m = new Module();
 				m.setM_id(rs.getString("module_id"));
 				m.setM_name(rs.getString("module_name"));
-				
+				m.setModule_role_name(rs.getString("name"));
 				modules.add(m);
 			}
 		} catch (SQLException e) {

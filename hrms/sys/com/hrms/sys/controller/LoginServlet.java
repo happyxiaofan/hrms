@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.hrms.doc.entity.BaseInfoVo;
 import com.hrms.sys.entity.Employee;
 import com.hrms.sys.manager.RoleEmpManager;
 import com.hrms.sys.manager.UserManager;
@@ -49,6 +50,12 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("e_name", uname);
 			session.setAttribute("role_name", role_name);
+			
+			BaseInfoVo baseInfoVo = userManager.queryUserInfo(uname);
+			
+			session.setAttribute("baseInfo", baseInfoVo);
+			
+			
 			if(role_name.equals("系统管理员")){
 				request.getRequestDispatcher("/main.html").forward(request, response);
 			}else if(role_name.equals("HR")){

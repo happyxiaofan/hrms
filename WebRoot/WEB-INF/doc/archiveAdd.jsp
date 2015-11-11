@@ -24,34 +24,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <form action="${pageContext.request.contextPath }/archiveServlet?item=addFile" method="post">
-    	<table>
+    	<table height="300px" width="60%" align="center" border="1px" cellspacing="0px">
     		<tr>
-    			<td>档案ID</td>
-    			<td><input type="text" name="a_id"></td>
+    			<td bgcolor="#d3eaef"><div align="center">档案ID</div></td>
+    			<td><div style="margin-left:30px;"><input type="text" name="a_id"></div></td>
     		</tr>
     		<tr>
-    			<td>人员ID</td>
-    			<td><input type="text" name="e_id"></td>
+    			<td bgcolor="#d3eaef"><div align="center">人员ID</div></td>
+    			<td><div style="margin-left:30px;"><input type="text" name="e_id"></div></td>
     		</tr>
     		<tr>
-    			<td>档案编号</td>
-    			<td><input type="text" name="a_num"></td>
+    			<td bgcolor="#d3eaef"><div align="center">档案编号</div></td>
+    			<td><div style="margin-left:30px;"><input type="text" name="a_num"></div></td>
     		</tr>
     		<tr>
-    			<td>档案名称</td>
-    			<td><input type="text" name="a_name"></td>
+    			<td bgcolor="#d3eaef"><div align="center">档案名称</div></td>
+    			<td><div style="margin-left:30px;"><input type="text" name="a_name"></div></td>
     		</tr>
     		<tr>
-    			<td>内容摘要</td>
-    			<td><input type="text" name="a_sum"></td>
+    			<td bgcolor="#d3eaef"><div align="center">内容摘要</div></td>
+    			<td><div style="margin-left:30px;"><input type="text" name="a_sum"></div></td>
     		</tr>
     		<tr>
-    			<td>备注</td>
-    			<td><input type="text" name="a_note"></td>
+    			<td bgcolor="#d3eaef"><div align="center">备注</div></td>
+    			<td><div style="margin-left:30px;"><input type="text" name="a_note"></div></td>
     		</tr>
     		<tr>
     			<td colspan="2">
-    				<input type="submit" value="添加档案">
+    				<div style="margin-left:270px;"><input type="submit" value="添加档案"></div>
     			</td>
     		</tr>
     	</table>

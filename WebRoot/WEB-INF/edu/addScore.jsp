@@ -19,9 +19,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   <body>
-  	添加成绩：
   	<form action="${pageContext.request.contextPath }/addScore" method="post">
-  		<table width="80%" border="1" cellspacing="0" height="200" align="center">
+  		<table width="80%" border="1" cellspacing="0" height="200" align="center" style="margin-top:20px">
   			<tr>
   				<td width="20%" align="center" style="background:#d3eaef">学号:</td>
   				<td>
@@ -46,7 +45,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   				<td align="center" style="background:#d3eaef">成绩:</td>
   				<td>&nbsp;&nbsp;<input type="text" size="30" name="sScore"></td>
  			</tr>
-  			<tr><td style="background:#d3eaef"></td><td>&nbsp;&nbsp;<input type="submit" value="提交">&nbsp;&nbsp;&nbsp;<input type="reset" value="重置"></td></tr>
+  			<tr>
+  				<td  colspan="2">
+  					<div style="margin-left:230px">
+  						<input type="submit" value="提交">&nbsp;&nbsp;&nbsp;<input type="reset" value="重置">
+	  				</div>
+  				</td>
+ 			</tr>
   		</table>
 	</form>
   </body>

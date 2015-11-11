@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -25,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		a img {border:none;}
 		.module{text-decoration:none;}
 </style>
-
+<script src="res/js/jquery.js"></script>
   </head>
   
   <body>
@@ -40,8 +41,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <td width="33" height="27"><img src="res/images/main_05.gif" width="33" height="27" /></td>
             <td width="248" background="res/images/main_06.gif"><table width="225" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
-                <td height="17"><div align="right"><a href="pwd.php" target="rightFrame"><img src="res/images/pass.gif" width="69" height="17" /></a></div></td>
-                <td><div align="right"><a href="user.php" target="rightFrame"><img src="res/images/user.gif" width="69" height="17" /></a></div></td>
+                <td height="17"><div align="right"><a href="${pageContext.request.contextPath }/addEmp?item=up" target="rightFrame"><img src="res/images/pass.gif" width="69" height="17" /></a></div></td>
+                <td><div align="right"><a href="${pageContext.request.contextPath }/docBaseInfoServlet?item=userInfo" target="rightFrame"><img src="res/images/user.gif" width="69" height="17" /></a></div></td>
                 <td><div align="right"><a href="index2.jsp" target="_parent"><img src="res/images/quit.gif" alt=" " width="69" height="17" /></a></div></td>
               </tr>
             </table></td>
@@ -58,7 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td width="21"><img src="res/images/main_13.gif" width="19" height="14" /></td>
-            <td width="35" class="STYLE7"><div align="center"><a href="main.html" target="rightFrame">首页</a></div></td>
+            <td width="35" class="STYLE7"><div align="center"><a href="${pageContext.request.contextPath}/listDept" target="rightFrame">首页</a></div></td>
             <td width="21" class="STYLE7"><img src="res/images/main_15.gif" width="19" height="14" /></td>
             <td width="35" class="STYLE7"><div align="center"><a href="javascript:history.go(-1);">后退</a></div></td>
             <td width="21" class="STYLE7"><img src="res/images/main_17.gif" width="19" height="14" /></td>
@@ -70,11 +71,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td width="60" class="STYLE7"><div align="center"><a href="sys_menu.jsp" class="module" target="leftFrame">系统管理</a></div></td>
+           <!--  <td width="60" class="STYLE7"><div align="center"><a href="sys_menu.jsp" class="module" target="leftFrame">系统管理</a></div></td>
             <td width="60" class="STYLE7"><div align="center"><a href="doc_menu.jsp" class="module" target="leftFrame">人事档案</a></div></td>
             <td width="60" class="STYLE7"><div align="center"><a href="edu_menu.jsp" class="module" target="leftFrame">教育培训</a></div></td>
             <td width="60" class="STYLE7"><div align="center"><a href="pa_menu.jsp" class="module" target="leftFrame">人事调配</a></div></td>
+          </tr> -->
+          <td width="270" class="STYLE7">
+            	<a href="sys_menu.jsp" class="module" target="leftFrame">系统管理</a>&nbsp;
+            	<a href="doc_menu.jsp" class="module" target="leftFrame">人事档案</a>&nbsp;
+            	<a href="edu_menu.jsp" class="module" target="leftFrame">教育培训</a>&nbsp;
+           		<a href="pa_menu.jsp" class="module" target="leftFrame">人事调配</a>&nbsp;
+           	</td>
           </tr>
+          <script>
+          	$("td, .module").click(function() {
+          		$(this).css("color", "#FFFFFF");
+          		$(this).siblings().css("color", "#000000");
+          	});
+          </script>
         </table>
         
         </td>
@@ -97,7 +111,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td height="20" valign="bottom">
-            <span class="STYLE1">当前登录用户：<%=request.getSession().getAttribute("e_name") %> &nbsp;用户角色：<%=request.getSession().getAttribute("role_name") %></span>
+            <span class="STYLE1"><input type="hidden" id="e_name" name="e_name" value="${e_name}"/>当前登录用户：<%=request.getSession().getAttribute("e_name") %> &nbsp;用户角色：<%=request.getSession().getAttribute("role_name") %></span>
             </td>
             <td valign="bottom" class="STYLE1"><div align="right"></div></td>
           </tr>

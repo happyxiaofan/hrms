@@ -30,11 +30,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   	<body>
   	<div align="center">
-  	<table width="80%" height="200" border="1" cellpadding="0" cellspacing="0" class="tbl">
-  		<tr bgcolor="#d3eaef"><th colspan="7" align="center" color="#001213">成绩查询表</th></tr>
+  	<table width="80%" border="1" cellpadding="0" cellspacing="0" class="tbl">
+  		<tr bgcolor="#d3eaef"><th colspan="7" align="center" color="#001213" height="30px">成绩查询表</th></tr>
   		<tr align="center">
-  			<td><input type="checkbox"></td>
-  			<td>序号</td>
+  			<td><input type="checkbox" height="30px"></td>
+  			<td height="30px">序号</td>
   			<td>人员姓名</td>
   			<td>课程</td>
   			<td>成绩</td>
@@ -45,18 +45,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	          	  Score score = scores.get(i);
 			%>
 			<tr>
-				<td height="20" bgcolor="#FFFFFF">
+				<td height="30px" bgcolor="#FFFFFF">
 					<div align="center">
 						<input type="checkbox" name="checkbox1" id="checkbox1" />
 					</div>
 				</td>
-				<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
+				<td height="30px" bgcolor="#FFFFFF" class="STYLE19"><div
 						align="center"><%=score.getsId()%></div></td>
-				<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
+				<td bgcolor="#FFFFFF" class="STYLE19"><div
 						align="center"><%=score.getsName() %></div></td>
-				<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
+				<td bgcolor="#FFFFFF" class="STYLE19"><div
 						align="center"><%=score.getsClass() %></div></td>
-				<td height="20" bgcolor="#FFFFFF" class="STYLE19"><div
+				<td bgcolor="#FFFFFF" class="STYLE19"><div
 						align="center"><%=score.getsScore() %></div></td>
 			</tr>
 			<%} %>

@@ -19,7 +19,7 @@ public class ArchiveDAO {
 	ResultSet rs = null;
 	String sql = null;
 	public List<Archive> pageQueryArchive(int start, int end) {
-		sql = "select * from (select p.*, rownum rn from (select * from t_doc_archive  order by a_id) p where rownum<=?) where rn>?";
+		sql = "select * from (select p.*, rownum rn from (select * from t_doc_archive order by a_id) p where rownum<=?) where rn>?";
 		List<Object> param = new ArrayList<Object>();
 		param.add(end);
 		param.add(start);

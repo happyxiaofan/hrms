@@ -18,7 +18,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="description" content="This is my page">
 	
 	<style type="text/css">
-form{ margin:0 auto; width:300px;}
 input{margin-top:10px;
 font-size:18px;}
 </style>
@@ -26,10 +25,23 @@ font-size:18px;}
   
   <body>
     <form action="${pageContext.request.contextPath}/moduleServlet?item=addModule" method="post">
-		模块编号：<input type="text" name="m_id" /><br />
-		模块名称：<input type="text" name="m_name" /><br />
-		<input type="submit" value="添加" />　　　
-		<input type="reset" />
+		<table width="60%" align="center" border="1px" cellspacing="0">
+			<tr>
+				<td>模块编号：</td>
+				<td><input type="text" name="m_id" /></td>
+			</tr>
+			<tr>
+				<td>模块名称：</td>
+				<td><input type="text" name="m_name" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><div style="margin-left:150px;">
+				<input type="submit" value="添加" />　　　
+				<input type="reset" />
+				</div>
+				</td>
+			</tr>
+		</table>
 	</form>
   </body>
 </html>

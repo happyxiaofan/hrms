@@ -46,9 +46,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce">
+    <td><table width="80%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce" align="center" style="margin-top:30px">
       <tr>
-        <td width="4%" height="20" bgcolor="#d3eaef" class="STYLE10"><div align="center">
+        <td width="4%" height="30" bgcolor="#d3eaef" class="STYLE10"><div align="center">
           <input type="checkbox" name="checkbox" id="checkbox" />
         </div></td>
         <td width="17%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center">培训ID</div></td>
@@ -61,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	          	  EduTrain tre = tres.get(i);
 			%>
 			<tr>
-				<td height="20" bgcolor="#FFFFFF">
+				<td height="30" bgcolor="#FFFFFF">
 					<div align="center">
 						<input type="checkbox" name="checkbox1" id="checkbox1" />
 					</div>

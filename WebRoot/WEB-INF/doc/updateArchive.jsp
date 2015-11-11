@@ -24,39 +24,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <form action="${pageContext.request.contextPath }/archiveServlet?item=update" method="post">
-    	<table>
+    	<table border="1px" width="60%" height="270px" cellspacing="0px" align="center">
     		<tr>
-    			<td>档案ID</td>
+    			<td bgcolor="#a8c7ce" >档案ID</td>
     			<td><input type="text" value="${archive.a_id }"></td>
     		</tr>
     		<tr>
-    			<td>人员ID</td>
+    			<td bgcolor="#a8c7ce" >人员ID</td>
     			<td>
     			<input type="text" value="${archive.e_id}">
     			</td>
     		</tr>
     		<tr>
-    			<td>档案编号</td>
+    			<td bgcolor="#a8c7ce" >档案编号</td>
     			<td><input type="text" value="${archive.a_num }"></td>
     		</tr>
     		<tr>
-    			<td>档案名称</td>
+    			<td bgcolor="#a8c7ce" >档案名称</td>
     			<td><input type="text" value="${archive.a_name }"></td>
     		</tr>
     		<tr>
-    			<td>摘要</td>
+    			<td bgcolor="#a8c7ce" >摘要</td>
     			<td>
     				<input type="text" value="${archive.a_sum }">
     			</td>
     		</tr>
     		<tr>
-    			<td>备注</td>
+    			<td bgcolor="#a8c7ce" >备注</td>
     			<td>
     				<input type="text" value="${archive.a_note }">
     			</td>
     		</tr>
     		<tr>
-    			<td colspan="2">
+    			<td colspan="2" style="text-align:center">
     				<input type="submit" value="更新">
     			</td>
     		</tr>

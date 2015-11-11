@@ -39,6 +39,7 @@ body {
 	color: #295568;
 }
 -->
+a{text-decoration: none;}
 </style>
 </head>
 
@@ -56,9 +57,9 @@ body {
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
  
   <tr>
-    <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce">
+    <td><table width="80%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce" align="center" style="margin-top:20px">
       <tr>
-        <td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div align="center">
+        <td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div align="center">
           <input type="checkbox" name="checkbox" id="checkbox" />
         </div></td>
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center">奖惩人员</div></td>
@@ -76,10 +77,10 @@ body {
 	         	  		Reward reward1 = res.get(i);
 	 %>
       <tr>
-        <td height="20" bgcolor="#FFFFFF"><div align="center">
+        <td height="30" bgcolor="#FFFFFF"><div align="center">
           <input type="checkbox" name="checkbox1" id="checkbox1" />
         </div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><%= reward1.getRewname()%></div></td>
+        <td height="30" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><%= reward1.getRewname()%></div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><%= reward1.getRewtype()%></div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><%= reward1.getRewdate()%></div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><%= reward1.getRewtitle()%></div></td>
@@ -93,6 +94,7 @@ body {
   </tr>
   
 </table>
+<div style="float:right;margin-right:150px">
 <%
         if (exportToExcel == null) {
     %>
@@ -100,5 +102,6 @@ body {
     <%
         }
     %>
+    </div>
 </body>
 </html>

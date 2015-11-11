@@ -25,34 +25,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</script>
 </head>
 <body>
-	<form method="post">
-		<table width="80%" align="center" border="1" cellspacing="0">
-			<tr>
-				<td colspan="7" align="center">所有证书信息</td>
-			</tr>
-			<tr>
-				<td>证书</td>
-				<td>证书编号</td>
-				<td>证书名称</td>
-				<td>培训学员</td>
-				<td>培训老师</td>
-				<td>获取证书时间</td>
-			</tr>
-			<%
+	<form action="" method="post">
+  		<table width="80%" align="center" border="1" cellspacing="0">
+  			<tr>
+  				<td colspan="6" align="center" height="30px" bgcolor="#d3eaef">所有证书信息</td>
+  			</tr>
+  			<tr>
+  				<td height="30px">证书编号</td>
+  				<td>证书名称</td>
+  				<td>培训学员</td>
+  				<td>培训老师</td>
+  				<td>获取证书时间</td>
+  			</tr>
+  			<%
 				List<Cert> certs = (List<Cert>)request.getAttribute("certs");
 				for(int i = 0;i<certs.size();i++){
 	          	  Cert cert = certs.get(i);
 			%>
-			<tr>
-				<td><input type="checkbox" class="add"></td>
-				<td><%=cert.getcId() %></td>
-				<td><%=cert.getcName() %></td>
-				<td><%=cert.getcStu() %></td>
-				<td><%=cert.getcTec() %></td>
-				<td><%=cert.getcDate() %></td>
-			</tr>
-			<%} %>
-		</table>
-	</form>
+  			<tr>
+  				<td height="30px"><%=cert.getcId() %></td>
+  				<td><%=cert.getcName() %></td>
+  				<td><%=cert.getcStu() %></td>
+  				<td><%=cert.getcTec() %></td>
+  				<td><%=cert.getcDate().substring(0,10) %></td>
+  			</tr>
+  			<%} %>
+  		</table>
+  	</form>
 </body>
 </html>

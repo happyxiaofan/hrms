@@ -20,7 +20,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 	<style type="text/css">
-form{ margin:0 auto; width:300px;}
 input{margin-top:10px;
 font-size:18px;}
 </style>
@@ -28,10 +27,22 @@ font-size:18px;}
   
   <body>
     <form action="${pageContext.request.contextPath}/roleServlet?item=addRole" method="post">
-		角色编号：<input type="text" name="role_id" /><br />
-		角色名称：<input type="text" name="role_name" /><br />
-		<input type="submit" value="添加" />　　　
-		<input type="reset" />
+		<table width="60%" border="1px" cellspacing="0px" align="center">
+		<tr>
+			<td width="20%" bgcolor="#a8c7ce" align="center">角色编号：</td>
+			<td><input type="text" name="role_id" /></td>
+		</tr>
+		<tr>
+			<td bgcolor="#a8c7ce" align="center">角色名称：</td>
+			<td><input type="text" name="role_name" /></td>
+		</tr>
+		<tr>
+			<td colspan="2"><div style="margin-left:150px">
+				<input type="submit" value="添加" />　　　
+				<input type="reset" />
+			</td>
+		</tr>
+		</table>
 	</form>
   </body>
 </html>

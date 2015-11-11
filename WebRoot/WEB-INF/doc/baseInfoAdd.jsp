@@ -119,10 +119,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table width="50%" height="400px;" align="center" class="altrowstable"
 			id="alternatecolor">
 			<tr>
-				<td colspan="5"><input type="submit" value="提交"> <input
-					type="reset" value="撤销">
-			</tr>
-			<tr>
 				<td>姓名:</td>
 				<td><input type="text" name="e_name" value=""></td>
 				<td>性别:</td>
@@ -153,11 +149,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<td>部门</td>
 				<td><select>
 						<option>请选择部门</option>
+						<option>技术支持部</option>
+						<option>信息部</option>
+						<option>财务部</option>
 				</select></td>
 				<td>职位</td>
 				<td><select>
 						<option>请选择职位</option>
-
+						<option>Java开发工程师</option>
+						<option>技术客服</option>
+						<option>财务主管</option>
+						<option>信息部主任</option>
 				</select></td>
 			</tr>
 			<tr>
@@ -168,6 +170,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					type="radio" name="status" value="兼职">兼职 <input
 					type="radio" name="status" value="离退">离退</td>
 				<td></td>
+			</tr>
+			<tr>
+				<td colspan="5">
+				<div style="margin-left:230px">
+					<input type="submit" value="提交">  <input type="reset" value="撤销">
+				</div>
 			</tr>
 		</table>
 	</form>

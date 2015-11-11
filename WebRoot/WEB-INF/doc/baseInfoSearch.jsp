@@ -49,7 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	</div>
     </form>
     <div class="searchBox" id="searchBox" >
-    	<table width="100%" class="datalist" onmouseup="inds()">
+    	<table width="100%" class="datalist" onmouseup="inds()" border="1px">
     		<tr class="altrow">
     			<td>姓名</td>
     			<td>性别</td>

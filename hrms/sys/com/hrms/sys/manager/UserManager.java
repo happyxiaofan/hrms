@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.hrms.doc.entity.BaseInfoVo;
 import com.hrms.sys.dao.DBAccess;
 import com.hrms.sys.dao.DBUtils;
 import com.hrms.sys.entity.Employee;
@@ -248,6 +249,54 @@ public class UserManager {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
+			DBUtils.release(null, stmt, null);
+		}
+	}
+
+	public BaseInfoVo queryUserInfo(String uname) {
+		BaseInfoVo baseInfoVo = null;
+		ResultSet rs = null;
+		try {
+			sql = "select u.e_id,u.passwd,u.e_gender gender,u.e_department dept,u.e_job job,u.e_pro_title title,b.edu edu,b.degree degree,b.status status,b.pic_path path from t_user u,t_doc_baseinfo b where u.e_name=b.e_name and b.e_name='"
+					+ uname + "'";
+			stmt = conn.prepareStatement(sql);
+			rs = stmt.executeQuery();
+			if(rs.next()){
+				baseInfoVo = new BaseInfoVo();
+				baseInfoVo.setE_name(uname);
+				baseInfoVo.setE_id(rs.getString("e_id"));
+				baseInfoVo.setPasswd(rs.getString("passwd"));
+				baseInfoVo.setDept(rs.getString("dept"));
+				baseInfoVo.setGender(rs.getString("gender"));
+				baseInfoVo.setJob(rs.getString("job"));
+				baseInfoVo.setTitle(rs.getString("title"));
+				baseInfoVo.setEdu(rs.getString("edu"));
+				baseInfoVo.setDegree(rs.getString("degree"));
+				baseInfoVo.setStatus(rs.getString("status"));
+				baseInfoVo.setPic_path(rs.getString("path"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			DBUtils.release(rs, stmt, null);
+		}
+		return baseInfoVo;
+	}
+
+	public void updatePwdByName(String e_name,String pwd) {
+		try {
+			sql = "update t_user set passwd=? where e_name=?";
+			stmt = conn.prepareStatement(sql);
+			stmt.setObject(1, pwd);
+			stmt.setObject(2, e_name);
+			
+			System.out.println(sql);
+			stmt.executeUpdate();
+			conn.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
 			DBUtils.release(null, stmt, null);
 		}
 	}

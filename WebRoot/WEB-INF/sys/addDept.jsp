@@ -17,7 +17,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<style type="text/css">
-form{ margin:0 auto; width:300px;}
 input{margin-top:10px;
 font-size:18px;}
 </style>
@@ -26,15 +25,33 @@ font-size:18px;}
   
   <body>
     <form action="${pageContext.request.contextPath}/addDept?item=add" method="post">
-		部门ID：<input type="text" name="dept_id" /><br />
-		部门名称：<input type="text" name="dept_name" /><br />
-		人数：<input type="text" name="dept_num" /><br />
-		是否可用：<br />
-		<input type="checkbox" name="dept_status" value="1">可用
-		<input type="checkbox" name="dept_status" value="0">不可用
-		<br />
-		<input type="submit" value="添加" />　　　
-		<input type="reset" />
+    	<table border="1" cellspacing="0" width="60%" align="center">
+    	<tr>
+    		<td>部门ID：</td>
+    		<td><input type="text" name="dept_id" /></td>
+    	</tr>
+		<tr>
+			<td>部门名称：</td>
+			<td><input type="text" name="dept_name" /></td>
+		</tr>
+		<tr>
+			<td>人数：</td>
+			<td><input type="text" name="dept_num" /></td>
+		</tr>
+		<tr>
+			<td>是否可用：</td>
+			<td>
+				<input type="checkbox" name="dept_status" value="1">可用
+				<input type="checkbox" name="dept_status" value="0">不可用
+			</td>
+		</tr>
+		<tr>
+		<td colspan="2">
+			<div style="margin-left:100px"><input type="submit" value="添加" />　　　
+			<input type="reset" /></div>
+		</td>
+		</tr>
+    	</table>
 	</form>
   </body>
 </html>

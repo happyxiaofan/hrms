@@ -97,7 +97,6 @@ public class ScoreManager {
 			String sql = "update t_edu_score set s_name='"+score.getsName()+"',"
 					+ "s_class='"+score.getsClass()+"',s_score='"+score.getsScore()+"' "
 					+ "where s_id='"+score.getsId()+"'";
-			System.out.println(sql);
 			stmt = conn.prepareStatement(sql);
 			stmt.executeUpdate();
 			conn.commit();
@@ -105,4 +104,17 @@ public class ScoreManager {
 			e.printStackTrace();
 		}
 	}
+	
+	public ResultSet query(String sql, List<Object> param) throws SQLException {
+		ResultSet rs = null;
+		stmt = conn.prepareStatement(sql);
+		if (param != null && param.size() > 0) {
+			for (int i = 0; i < param.size(); i++) {
+				stmt.setObject(i + 1, param.get(i));
+			}
+		}
+		rs = stmt.executeQuery();
+		return rs;
+	}
+
 }

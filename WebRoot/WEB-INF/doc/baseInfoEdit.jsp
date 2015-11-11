@@ -28,7 +28,9 @@ body {
 	margin-right: 3px;
 	margin-bottom: 0px;
 }
-
+a{
+	text-decoration:none;
+}
 .STYLE1 {
 	color: #e1e2e3;
 	font-size: 12px;
@@ -89,10 +91,10 @@ body {
 			cellspacing="0">
 			<tr>
 				<td>
-				<table width="100%" border="0" cellpadding="0"
+				<table width="80%" border="0" cellpadding="0" style="margin-top:30px;" align="center";
 						cellspacing="1" bgcolor="#a8c7ce">
 						<tr>
-							<td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
+							<td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div
 									align="center">
 									<input type="checkbox" name="checkbox" id="checkbox" />
 								</div></td>
@@ -107,24 +109,24 @@ body {
 									align="center">学位</div></td>
 							<td width="16%" height="20" bgcolor="d3eaef" class="STYLE6"><div
 									align="center">所在部门</div></td>
-							<td width="5%" height="20" bgcolor="d3eaef" class="STYLE6">
+							<td width="10%" height="20" bgcolor="d3eaef" class="STYLE6">
 								<div align="center">职位</div>
 							</td>
-							<td width="20%" height="20" bgcolor="d3eaef" class="STYLE6">
+							<td width="10%" height="20" bgcolor="d3eaef" class="STYLE6">
 								<div align="center">照片</div>
 							</td>
 							<td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div
 									align="center">
 									<span class="STYLE10">状态</span>
 								</div></td>
-							<td width="50px" height="20" bgcolor="d3eaef" class="STYLE6" ><div
+							<td width="20%" height="20" bgcolor="d3eaef" class="STYLE6" ><div
 									align="center" class="editArea">
 									<span class="STYLE10">基本操作</span>
 								</div></td>
 						</tr>
 						<c:forEach items="${infos}" var="info">
 			   				<tr>
-			   					<td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
+			   					<td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div
 									align="center">
 									<input type="checkbox" name="checkbox" id="checkbox" />
 								</div></td>
@@ -155,7 +157,8 @@ body {
 			   			</c:forEach>
 						<!-- 分页 -->
 						<tr>
-			   				<td colspan="6" align="center">
+			   				<td colspan="9" align="center" height="30px">
+			   					<div style="margin-left:100px">
 			   					共有${page.recordcount}条记录&nbsp;
 			   					每页显示<input type="text" id="pagesize" value="${page.pagesize }" size="2" onblur="forward1()"/>条记录&nbsp;
 			   					共有${page.pagecount }页
@@ -179,8 +182,8 @@ body {
 			   							<a href="docBaseInfoServlet?item=edit&pagenum=${page.pagecount}&pagesize=${page.pagesize}">尾页</a>
 			   						</c:otherwise>
 			   					</c:choose>
-			   					
 			   					跳转到第<input type="text" value="${page.pagenum }" size="2" id="pagenum" onblur="forward2()"/>页
+			   					</div>
 			   				</td>
 			   			</tr>
 					</table>

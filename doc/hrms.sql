@@ -20,7 +20,7 @@ create table t_user(
 );
 
 insert into t_user(e_id,e_name,passwd) values('e001','钟础彬','123');
-insert into t_user(e_id,e_name,passwd) values('e002','钟础彬','123');
+insert into t_user(e_id,e_name,passwd) values('e002','pa1','123');
 
 select * from t_user for update;
 
@@ -93,3 +93,76 @@ insert into t_doc_baseinfo values('张子凡','男','研究生','博士',9,'');
 select * from t_doc_baseinfo where e_name like '%凡%';
 commit;
 
+ select * from t_doc_record;
+ 
+ select * from t_dept for update;
+
+create table t_EDU_SCORE
+(
+  S_ID    VARCHAR2(40) not null,
+  S_NAME  VARCHAR2(40),
+  S_CLASS VARCHAR2(40),
+  S_SCORE NUMBER
+)
+
+create table t_EDU_TRAIN
+(
+  TRE_ID   VARCHAR2(40),
+  TRE_NAME VARCHAR2(40),
+  TRE_NUM  NUMBER
+)
+
+create table t_TRAIN_RECORD
+(
+  TRE_ID         VARCHAR2(40),
+  TRE_TITLE      VARCHAR2(40),
+  TRE_NUMBER     VARCHAR2(40),
+  TRE_CLASS      VARCHAR2(40),
+  TRE_START_TIME DATE,
+  TRE_END_TIME   DATE,
+  TRE_FREE       NUMBER(10),
+  TRE_ADDR       VARCHAR2(40),
+  TRE_UNIT       VARCHAR2(40),
+  TRE_WAY        VARCHAR2(40)
+)
+
+create table T_doc_REWARD
+(
+  rewid      NUMBER,
+  rewtype    VARCHAR2(40),
+  rewdate    VARCHAR2(20),
+  rewtitle   VARCHAR2(40),
+  rewcontent VARCHAR2(40),
+  rewlevel   VARCHAR2(20),
+  rewname    VARCHAR2(40)
+)
+
+insert into T_doc_REWARD (rewid, rewtype, rewdate, rewtitle, rewcontent, rewlevel, rewname)
+values (2, '惩罚', '2015-12-22', '单月出勤不满20天', '表现差', '1000', 'jim');
+insert into T_doc_REWARD (rewid, rewtype, rewdate, rewtitle, rewcontent, rewlevel, rewname)
+values (1, '奖励', '2015-02-22', '优秀员工奖', '突出贡献', '-500', 'lucy');
+insert into T_doc_REWARD (rewid, rewtype, rewdate, rewtitle, rewcontent, rewlevel, rewname)
+values (25, '奖励', '2015-02-04', '优秀员工', '表现突出', '10000', '张三');
+
+select * from t_user;
+select * from t_doc_record;
+select * from t_doc_baseinfo for update;
+select  pic_path from t_doc_baseinfo where pic_path is not null;
+when b.pic_path not null
+  then
+    select pic_path from t_doc_baseinfo where e_name='钟础彬';
+
+create or replace view v_user_info
+as
+select u.e_name,u.e_gender,u.e_department,u.e_job,u.e_pro_title,b.edu,b.degree,b.status from t_user u,t_doc_baseinfo  b;
+
+select u.e_gender     gender,
+       u.e_department dept,
+       u.e_job        job,
+       u.e_pro_title  title,
+       b.edu          edu,
+       b.degree       degree,
+       b.status       status,
+       b.pic_path     path
+  from t_user u, t_doc_baseinfo b
+ where  b.e_name = '钟础彬'

@@ -27,11 +27,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   	<form action="${pageContext.request.contextPath }/downloadServlet?item=download" method="post">
-  		<table>
+  		<table border="1px" align="center" width="60%" cellspacing="0px" height="100px">
   		<tr>
-  		<td>编号</td>
-  		<td>图片</td>
-  		<td>操作</td>
+  		<td width="10%">编号</td>
+  		<td width="30%">图片</td>
+  		<td width="15%">操作</td>
   		</tr>
   		<%-- <c:forEach items="${paths }" var="path"> --%>
   		<% 
@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		 %>
   		<tr>
   			<td><input type="hidden" name="filepath" value="<%=path1.getPath() %>" readonly="readonly"/><%=j %></td>
-  			<td><input type="text" name="filename" value="<%=filename %>" readonly="readonly"/></td>
+  			<td><input type="hidden" name="filename" value="<%=filename %>" readonly="readonly"/><%=filename %></td>
   			<td><input type="submit" value="下载"/></td>
   		</tr>
   		<%

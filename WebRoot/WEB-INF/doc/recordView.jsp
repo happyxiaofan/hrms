@@ -114,10 +114,10 @@ a{text-decoration: none;}
 			cellspacing="0">
 			<tr>
 				<td>
-				<table width="100%" border="0" cellpadding="0"
+				<table width="80%" border="0" cellpadding="0" align="center" style="margin-top:30px"
 						cellspacing="1" bgcolor="#a8c7ce">
 						<tr>
-							<td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
+							<td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div
 									align="center">
 									<input type="checkbox" name="checkbox" id="checkbox" />
 								</div></td>
@@ -139,7 +139,7 @@ a{text-decoration: none;}
 						</tr>
 						<c:forEach items="${records}" var="record">
 			   				<tr>
-			   					<td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div
+			   					<td width="4%" height="30" bgcolor="d3eaef" class="STYLE10"><div
 									align="center">
 									<input type="checkbox" name="checkbox" id="checkbox" />
 								</div></td>
@@ -160,7 +160,7 @@ a{text-decoration: none;}
 			   			</c:forEach>
 						<!-- 分页 -->
 						<tr>
-			   				<td colspan="6" align="center">
+			   				<td colspan="9" align="center" height="30px">
 			   					共有${page.recordcount}条记录&nbsp;
 			   					每页显示<input type="text" id="pagesize" value="${page.pagesize }" size="2" onblur="forward1()"/>条记录&nbsp;
 			   					共有${page.pagecount }页
@@ -191,6 +191,7 @@ a{text-decoration: none;}
 					</table>
    </table>
    </form>
+   <div style="float:right;margin-right:150px">
    <%
         if (exportToExcel == null) {
     %>
@@ -198,5 +199,6 @@ a{text-decoration: none;}
     <%
         }
     %>
+    </div>
   </body>
 </html>

@@ -66,7 +66,7 @@ public class UpdatepChange extends HttpServlet {
 		List<pChange> pcs = um.queryAllpChanges();
 		
 			request.setAttribute("pcs",pcs);
-			request.getRequestDispatcher("pa/listpChange.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/pa/listpChange.jsp").forward(request, response);
 		
 	}
 

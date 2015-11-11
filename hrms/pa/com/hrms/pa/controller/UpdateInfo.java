@@ -77,7 +77,7 @@ public class UpdateInfo extends HttpServlet {
 		pchange.setPchange_emp_id(pchange_emp_id);
 		
 		request.setAttribute("pc", pchange);
-		request.getRequestDispatcher("pa/updatepChange.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/pa/updatepChange.jsp").forward(request, response);
 	}
 
 	/**

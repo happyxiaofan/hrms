@@ -16,7 +16,7 @@ form{ margin:0 auto; width:500px;}
 input{margin-top:10px;
 font-size:18px;}
 </style>
-
+<script type="text/javascript" src="res/js/DatePicker/WdatePicker.js"></script>
   </head>
   
   <body>
@@ -49,7 +49,12 @@ font-size:18px;}
         </tr>
         <tr>
         	<td>聘任时间：</td>
-            <td><input type="text" name="emp_date" value="<%=emp_date %>"/><br /></td>
+            <td>
+            
+            <input id="emp_date" name="emp_date" type="text" />
+    			<img onclick="WdatePicker({el:'emp_date'})" src="res/js/DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle">
+    			</img>
+    			</td>
         </tr>
         <tr>
         	<td><input type="submit" value="更新" /></td>

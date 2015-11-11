@@ -100,6 +100,13 @@ body {
         <li><a href="${pageContext.request.contextPath}/empResign" target="rightFrame">离职员工信息</a></li>
       </ul>
     </li>
+    <li> <a class="head">查询系统</a>
+      <ul>
+        <li>
+	        <a href="${pageContext.request.contextPath}/paInfoServlet" target="rightFrame">查询系统</a>
+        </li>
+      </ul>
+    </li>
   </ul>
 </div>
   </body>
