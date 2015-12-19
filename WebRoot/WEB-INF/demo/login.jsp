@@ -13,7 +13,6 @@
 <title>人力资源管理系统 | 登录</title>
 
 <link rel="stylesheet" type="text/css" href="res/css/bootstrap.min.css" />
-
 <style type="text/css">
 			
 html,body {
@@ -35,7 +34,7 @@ html,body {
 .login-box {
 	width: 100%;
 	max-width:400px;
-	height: 400px;
+	height: 420px;
 	position: absolute;
 	top: 50%;
 
@@ -53,13 +52,13 @@ html,body {
 
 .form {
 	width: 100%;
-	max-width:400px;
+	max-width:420px;
 	height: 275px;
 	margin: 25px auto 0px auto;
 	padding-top: 25px;
 }	
 .login-content {
-	height: 300px;
+	height: 320px;
 	width: 100%;
 	max-width:500px;
 	background-color: rgba(255, 250, 2550, .6);
@@ -68,7 +67,7 @@ html,body {
 	
 	
 .input-group {
-	margin: 0px 0px 30px 0px !important;
+	margin: 0px 0px 20px 0px !important;
 }
 .form-control,
 .input-group {
@@ -135,21 +134,24 @@ html,body {
 						</div>
 					</div>
 				</div>
+				<!-- 验证码 -->
+				<div class="form-group">
+					<div class="col-xs-8 ">
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+							<input type="text" id="verifycode" name="verifycode" class="form-control" placeholder="验证码"/>
+						</div>
+					</div>
+					<div class="col-xs-4 ">
+						<div class="input-group">
+							<img src="verifyAction" style="margin-left:0px;" width="70px;" height="30px"/><a href="javascript:window.parent.location.reload()">刷新</a>
+							<p><span><font style="font-size: 5px;">${errormsg}</font></span></p>
+						</div>
+					</div>
+				</div>
 				<div class="form-group form-actions">
 					<div class="col-xs-4 col-xs-offset-4 ">
-						<button type="submit" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-off"></span> 登录</button>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-xs-6 link">
-						<p class="text-center remove-margin"><small></small> <a href="javascript:void(0)" ><small></small></a>
-						</p>
-					</div>
-				</div>
-                <div class="form-group">
-					<div class="col-xs-6 link">
-						<p class="text-center remove-margin"><small>忘记密码？</small> <a href="javascript:void(0)" ><small>找回</small></a>
-						</p>
+					<button type="submit" class="btn btn-sm btn-info">登录</button>
 					</div>
 				</div>
 			</form>

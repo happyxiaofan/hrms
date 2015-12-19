@@ -18,6 +18,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import com.hrms.doc.dao.BaseInfoDAO;
 import com.hrms.doc.entity.BaseInfo;
+import com.hrms.doc.entity.BaseInfoVo;
 import com.hrms.doc.manager.BaseInfoManager;
 import com.hrms.sys.dao.EmployeeDao;
 import com.hrms.sys.entity.Employee;
@@ -25,47 +26,12 @@ import com.hrms.sys.entity.Page;
 
 public class DocBaseInfoServlet extends HttpServlet {
 
-	/**
-	 * Constructor of the object.
-	 */
-	public DocBaseInfoServlet() {
-		super();
-	}
-
-	/**
-	 * Destruction of the servlet. <br>
-	 */
-	public void destroy() {
-		super.destroy(); // Just puts "destroy" string in log
-		// Put your code here
-	}
-
-	/**
-	 * The doGet method of the servlet. <br>
-	 *
-	 * This method is called when a form has its tag value method equals to get.
-	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
-	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		doPost(request, response);
 	}
 
-	/**
-	 * The doPost method of the servlet. <br>
-	 *
-	 * This method is called when a form has its tag value method equals to post.
-	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
-	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -84,7 +50,6 @@ public class DocBaseInfoServlet extends HttpServlet {
 				BaseInfo info = new BaseInfo();
 				for (FileItem fileItem : list) {
 					if(fileItem.isFormField()){//表单域
-						
 						if(fileItem.getFieldName().equals("e_name")){
 							String uv = fileItem.getString("utf-8");
 							info.setE_name(uv);
@@ -103,18 +68,20 @@ public class DocBaseInfoServlet extends HttpServlet {
 						}
 					}else{//文件上传域
 						//获取服务所在的绝对路径
-						String url = getServletContext().getRealPath("\\pic");
+						String path = this.getServletContext().getRealPath("/")+"upload";
+						String url = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()+"/upload/";
 						String fileName = fileItem.getName();
-						System.out.println(fileName);
+						System.out.println(path+fileName);
 						String extName = fileName.substring(fileName.lastIndexOf(".")+1);
 						if(extName.equals("jpg") || extName.equals("gif")){
-							File uFile = new File(url);
+							File uFile = new File(path);
 							if(!uFile.exists()){
 								uFile.mkdirs();
 							}
-							info.setPic_path(uFile.getAbsolutePath()+"\\" + fileName);
 							
-							File file = new File(uFile,fileName);
+							info.setPic_path(path+"\\" + fileName);
+							
+							File file = new File(path,fileName);
 							fileItem.write(file);
 						}else{
 							System.out.println("文件格式不支持");

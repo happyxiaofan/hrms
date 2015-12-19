@@ -30,6 +30,15 @@ public class LoginServlet extends HttpServlet {
 		String uname = request.getParameter("userName");
 		String pwd = request.getParameter("passwd");
 		
+		//获取验证码
+		String vc1 = (String) request.getSession().getAttribute("VerifyCode");
+		System.out.println(vc1);
+		String vc2 = request.getParameter("verifycode");
+		if(!vc1.equals(vc2)){
+			request.setAttribute("errormsg", "验证码错误!");
+			request.getRequestDispatcher("/index2.jsp").forward(request, response);
+			return;
+		}
 		//验证用户名
 		UserManager userManager = new UserManager();
 		RoleEmpManager roleEmpManager = new RoleEmpManager();
@@ -39,8 +48,6 @@ public class LoginServlet extends HttpServlet {
 		emp.setPwd(pwd);
 		boolean isValid = userManager.isValid(emp);
 		if(isValid){//验证成功
-//			request.setAttribute("ename", uname);
-			
 			//根据登录账号判断当前登录用户的角色
 			String e_id = userManager.queryEmpByName(uname);
 			String emp_role_id = userManager.queryEmpRoleIdByEId(e_id);
@@ -67,6 +74,7 @@ public class LoginServlet extends HttpServlet {
 			}
 			
 		}else{//验证失败
+			request.setAttribute("errormsg", "用户名或密码错误！");
 			request.getRequestDispatcher("/index2.jsp").forward(request, response);
 		}
 	}

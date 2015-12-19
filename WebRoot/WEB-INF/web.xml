@@ -311,6 +311,11 @@
     <servlet-name>PaInfoServlet</servlet-name>
     <servlet-class>com.hrms.pa.controller.PaInfoServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>VerifyAction</servlet-name>
+    <servlet-class>com.hrms.sys.controller.VerifyAction</servlet-class>
+  </servlet>
+
 
 
 
@@ -495,6 +500,10 @@
    <servlet-mapping>
     <servlet-name>PaInfoServlet</servlet-name>
     <url-pattern>/paInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>VerifyAction</servlet-name>
+    <url-pattern>/verifyAction</url-pattern>
   </servlet-mapping>
  
   
